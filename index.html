@@ -1,0 +1,1510 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mekar Wangi Indonesia – Toko parfum baju dan parfum laundry premium. Tersedia di 8 cabang. Wangi tahan lama, harga terjangkau."
+    />
+    <meta
+      name="keywords"
+      content="parfum baju, parfum laundry, pewangi pakaian, toko parfum, Mekar Wangi Indonesia"
+    />
+    <title>Mekar Wangi Indonesia – Parfum Baju & Laundry Premium</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* ── HERO ── */
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 5% 5rem;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          var(--blue-pale) 0%,
+          var(--white) 55%,
+          var(--pink-pale) 100%
+        );
+      }
+      .hero-blob1 {
+        position: absolute;
+        top: -140px;
+        right: -140px;
+        width: 560px;
+        height: 560px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(212, 132, 158, 0.18) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hero-blob2 {
+        position: absolute;
+        bottom: -100px;
+        left: -100px;
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(123, 174, 212, 0.18) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        max-width: 1180px;
+        margin: 0 auto;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--pink-pale);
+        color: var(--pink);
+        padding: 0.4rem 1rem;
+        border-radius: 99px;
+        font-size: 0.73rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 1.6rem;
+      }
+      .hero-badge::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--pink);
+      }
+      .hero-title {
+        font-size: clamp(2.8rem, 5vw, 4rem);
+        margin-bottom: 1.2rem;
+        color: var(--dark);
+      }
+      .hero-title em {
+        font-style: italic;
+        color: var(--blue);
+      }
+      .hero-sub {
+        font-size: 1rem;
+        color: var(--mid);
+        max-width: 440px;
+        margin-bottom: 2.4rem;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .hero-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 400px;
+      }
+      .hero-card {
+        width: 260px;
+        height: 320px;
+        border-radius: var(--radius-xl);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        box-shadow: var(--shadow-lg);
+      }
+      .hero-card-main {
+        background: linear-gradient(145deg, var(--blue-soft), var(--blue));
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-60%, -50%) rotate(-5deg);
+      }
+      .hero-card-sub {
+        background: linear-gradient(145deg, var(--pink-soft), var(--pink));
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-20%, -45%) rotate(5deg);
+        width: 200px;
+        height: 250px;
+        box-shadow: var(--shadow-md);
+      }
+      .hero-card .icon {
+        font-size: 3.5rem;
+      }
+      .hero-card p {
+        font-family: var(--ff-display);
+        font-size: 1.1rem;
+        color: var(--white);
+      }
+      .hero-card-sub p {
+        font-size: 0.95rem;
+      }
+      .hero-pill {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        background: var(--white);
+        border-radius: var(--radius-md);
+        padding: 0.8rem 1.2rem;
+        box-shadow: var(--shadow-md);
+        text-align: center;
+        z-index: 3;
+      }
+      .hero-pill strong {
+        display: block;
+        font-size: 1.4rem;
+        color: var(--dark);
+        font-family: var(--ff-display);
+      }
+      .hero-pill span {
+        font-size: 0.7rem;
+        color: var(--muted);
+      }
+
+      /* ── WHY US ── */
+      #keunggulan {
+        padding: 6rem 5%;
+        background: var(--cream);
+      }
+      .keunggulan-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .kgl-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 2rem 1.8rem;
+        border: 1px solid var(--border);
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+      .kgl-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--blue), var(--pink));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: var(--transition);
+      }
+      .kgl-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-md);
+      }
+      .kgl-card:hover::before {
+        transform: scaleX(1);
+      }
+      .kgl-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: var(--radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
+      }
+      .kgl-icon.blue {
+        background: var(--blue-pale);
+      }
+      .kgl-icon.pink {
+        background: var(--pink-pale);
+      }
+      .kgl-card h3 {
+        font-family: var(--ff-display);
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem;
+      }
+      .kgl-card p {
+        font-size: 0.86rem;
+        color: var(--mid);
+      }
+
+      /* ── KATEGORI PRODUK ── */
+      #produk {
+        padding: 6rem 5%;
+      }
+      .produk-header {
+        margin-bottom: 3.5rem;
+      }
+      .kategori-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .kategori-card {
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+      .kategori-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+      }
+      .kategori-bg {
+        height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        position: relative;
+      }
+      .kategori-bg.biru {
+        background: linear-gradient(135deg, var(--blue-pale), var(--blue-soft));
+      }
+      .kategori-bg.pink {
+        background: linear-gradient(135deg, var(--pink-pale), var(--pink-soft));
+      }
+      .kategori-body {
+        padding: 1.8rem 2rem;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-top: none;
+        border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      }
+      .kategori-body h3 {
+        font-family: var(--ff-display);
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .kategori-body p {
+        font-size: 0.88rem;
+        color: var(--mid);
+        margin-bottom: 1.2rem;
+      }
+      .kategori-preview {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.4rem;
+      }
+      .kategori-preview span {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.7rem;
+        border-radius: 99px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+      }
+      .kategori-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--blue);
+        transition: gap var(--transition);
+      }
+      .kategori-card:hover .kategori-link {
+        gap: 0.8rem;
+      }
+
+      /* ── CARA PESAN ── */
+      #cara-pesan {
+        padding: 6rem 5%;
+        background: var(--dark);
+      }
+      #cara-pesan .section-eyebrow {
+        color: var(--blue-soft);
+      }
+      #cara-pesan .section-eyebrow::before {
+        background: var(--blue-soft);
+      }
+      #cara-pesan .section-title {
+        color: var(--white);
+      }
+      #cara-pesan .section-title em {
+        color: var(--pink-soft);
+      }
+      #cara-pesan .section-desc {
+        color: var(--muted);
+      }
+      .cara-tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin: 2.5rem 0 2rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 99px;
+        padding: 0.4rem;
+        width: fit-content;
+      }
+      .cara-tab {
+        padding: 0.6rem 1.5rem;
+        border-radius: 99px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--muted);
+        transition: var(--transition);
+        border: none;
+        background: transparent;
+        font-family: var(--ff-body);
+      }
+      .cara-tab.active {
+        background: var(--white);
+        color: var(--dark);
+      }
+      .cara-content {
+        display: none;
+      }
+      .cara-content.active {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+      .cara-step {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: var(--radius-lg);
+        padding: 1.8rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
+      }
+      .cara-step-num {
+        font-family: var(--ff-display);
+        font-size: 3rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.08);
+        position: absolute;
+        top: 1rem;
+        right: 1.2rem;
+      }
+      .cara-step-icon {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+      .cara-step h4 {
+        font-size: 0.95rem;
+        color: var(--white);
+        margin-bottom: 0.4rem;
+        font-family: var(--ff-body);
+        font-weight: 500;
+      }
+      .cara-step p {
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+
+      /* ── TESTIMONI ── */
+      #testimoni {
+        padding: 6rem 5%;
+        background: var(--cream);
+      }
+      .testi-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .testi-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 1.8rem;
+        border: 1px solid var(--border);
+        transition: var(--transition);
+      }
+      .testi-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+      }
+      .testi-stars {
+        color: var(--pink);
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.8rem;
+      }
+      .testi-card blockquote {
+        font-size: 0.9rem;
+        color: var(--mid);
+        line-height: 1.8;
+        font-style: italic;
+        margin-bottom: 1.4rem;
+        font-weight: 300;
+      }
+      .testi-user {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      .testi-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+      .av-blue {
+        background: var(--blue-pale);
+      }
+      .av-pink {
+        background: var(--pink-pale);
+      }
+      .av-mix {
+        background: linear-gradient(135deg, var(--blue-pale), var(--pink-pale));
+      }
+      .testi-user strong {
+        font-size: 0.86rem;
+        color: var(--dark);
+        display: block;
+        font-weight: 500;
+        font-family: var(--ff-body);
+      }
+      .testi-user span {
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+
+      /* ── FAQ ── */
+      #faq {
+        padding: 6rem 5%;
+      }
+      .faq-wrap {
+        max-width: 720px;
+        margin: 3rem auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .faq-item {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+      .faq-q {
+        width: 100%;
+        text-align: left;
+        padding: 1.2rem 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        font-family: var(--ff-body);
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--dark);
+        transition: var(--transition);
+      }
+      .faq-q:hover {
+        background: var(--cream);
+      }
+      .faq-q .faq-icon {
+        font-size: 1.2rem;
+        color: var(--blue);
+        transition: transform var(--transition);
+        flex-shrink: 0;
+      }
+      .faq-item.open .faq-icon {
+        transform: rotate(45deg);
+      }
+      .faq-a {
+        display: none;
+        padding: 0 1.5rem 1.2rem;
+        font-size: 0.88rem;
+        color: var(--mid);
+        line-height: 1.8;
+        font-weight: 300;
+      }
+      .faq-item.open .faq-a {
+        display: block;
+      }
+
+      /* ── GALERI ── */
+      #galeri {
+        padding: 6rem 5%;
+        background: var(--cream);
+      }
+      .galeri-grid {
+        columns: 3;
+        gap: 1rem;
+        margin-top: 3rem;
+      }
+      .galeri-item {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        cursor: pointer;
+        transition: var(--transition);
+        position: relative;
+      }
+      .galeri-item:hover {
+        transform: scale(1.02);
+        box-shadow: var(--shadow-md);
+      }
+      .galeri-placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        border-radius: var(--radius-md);
+      }
+      .gal-1 {
+        height: 200px;
+        background: linear-gradient(135deg, var(--blue-pale), var(--blue-soft));
+      }
+      .gal-2 {
+        height: 140px;
+        background: linear-gradient(135deg, var(--pink-pale), var(--pink-soft));
+      }
+      .gal-3 {
+        height: 180px;
+        background: linear-gradient(135deg, var(--blue-soft), var(--pink-soft));
+      }
+      .gal-4 {
+        height: 160px;
+        background: linear-gradient(135deg, var(--pink-pale), var(--blue-pale));
+      }
+      .gal-5 {
+        height: 220px;
+        background: linear-gradient(135deg, var(--blue-pale), var(--blue-soft));
+      }
+      .gal-6 {
+        height: 150px;
+        background: linear-gradient(135deg, var(--pink-soft), var(--pink-pale));
+      }
+      .galeri-note {
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+
+      /* ── CABANG ── */
+      #cabang {
+        padding: 6rem 5%;
+      }
+      .cabang-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .cabang-card {
+        background: var(--white);
+        border-radius: var(--radius-lg);
+        padding: 1.6rem;
+        border: 1px solid var(--border);
+        transition: var(--transition);
+      }
+      .cabang-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--blue-soft);
+      }
+      .cabang-num {
+        font-family: var(--ff-display);
+        font-size: 0.85rem;
+        color: var(--blue);
+        font-weight: 400;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .cabang-num::before {
+        content: "";
+        width: 14px;
+        height: 1.5px;
+        background: var(--blue);
+      }
+      .cabang-card h4 {
+        font-family: var(--ff-display);
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+      .cabang-card address {
+        font-style: normal;
+        font-size: 0.85rem;
+        color: var(--mid);
+        line-height: 1.7;
+        margin-bottom: 1.2rem;
+        font-weight: 300;
+      }
+      .cabang-actions {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+      }
+      .cabang-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.75rem;
+        padding: 0.4rem 0.9rem;
+        border-radius: 99px;
+        border: 1px solid var(--border);
+        color: var(--mid);
+        transition: var(--transition);
+        font-family: var(--ff-body);
+        cursor: pointer;
+        background: none;
+      }
+      .cabang-btn:hover {
+        background: var(--blue-pale);
+        border-color: var(--blue-soft);
+        color: var(--dark);
+      }
+      .cabang-btn.wa:hover {
+        background: #e8fff0;
+        border-color: #25d366;
+        color: #128c4e;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 900px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .hero-sub {
+          margin: 0 auto 2rem;
+        }
+        .hero-ctas {
+          justify-content: center;
+        }
+        .hero-visual {
+          display: none;
+        }
+        .kategori-grid {
+          grid-template-columns: 1fr;
+        }
+        .galeri-grid {
+          columns: 2;
+        }
+      }
+      @media (max-width: 560px) {
+        .galeri-grid {
+          columns: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══ NAVBAR ═══ -->
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="nav-logo"
+        >Mekar <span>Wangi</span> Indonesia</a
+      >
+      <ul class="nav-links">
+        <li><a href="#keunggulan">Keunggulan</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#cara-pesan">Cara Pesan</a></li>
+        <li><a href="#cabang">Cabang</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a
+          href="https://wa.me/628123456789"
+          class="btn btn-pink"
+          target="_blank"
+          >💬 Order WA</a
+        >
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section id="hero">
+      <div class="hero-blob1"></div>
+      <div class="hero-blob2"></div>
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge anim">✦ Parfum Pilihan Terpercaya</div>
+          <h1 class="hero-title anim delay-1">
+            Wangi yang <em>Menawan,</em><br />Harga Bersahabat
+          </h1>
+          <p class="hero-sub anim delay-2">
+            Mekar Wangi Indonesia menghadirkan koleksi parfum baju dan parfum
+            laundry berkualitas premium untuk menemani hari-hari Anda.
+          </p>
+          <div class="hero-ctas anim delay-3">
+            <a href="#produk" class="btn btn-dark">✨ Lihat Produk</a>
+            <a href="#cabang" class="btn btn-outline">📍 Temukan Cabang</a>
+          </div>
+        </div>
+        <div class="hero-visual anim delay-4">
+          <div class="hero-card hero-card-main">
+            <span class="icon">🌸</span>
+            <p>Parfum Baju</p>
+          </div>
+          <div class="hero-card hero-card-sub">
+            <span class="icon">🫧</span>
+            <p>Parfum Laundry</p>
+          </div>
+          <div class="hero-pill">
+            <strong>8</strong>
+            <span>Cabang Tersebar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ KEUNGGULAN ═══ -->
+    <section id="keunggulan">
+      <div class="container">
+        <div class="section-eyebrow anim">Mengapa Kami</div>
+        <h2 class="section-title anim delay-1">
+          Keunggulan <em>Mekar Wangi</em>
+        </h2>
+        <p class="section-desc anim delay-2">
+          Kami berkomitmen menghadirkan pengalaman berbelanja parfum yang
+          menyenangkan, berkualitas, dan terpercaya.
+        </p>
+        <div class="keunggulan-grid">
+          <div class="kgl-card anim delay-1">
+            <div class="kgl-icon blue">🌿</div>
+            <h3>Formula Tahan Lama</h3>
+            <p>
+              Aroma parfum kami dirancang untuk bertahan sepanjang hari tanpa
+              perlu sering reapply.
+            </p>
+          </div>
+          <div class="kgl-card anim delay-2">
+            <div class="kgl-icon pink">💎</div>
+            <h3>Kualitas Premium</h3>
+            <p>
+              Bahan baku pilihan yang aman untuk kulit dan pakaian, sudah teruji
+              dan terpercaya.
+            </p>
+          </div>
+          <div class="kgl-card anim delay-3">
+            <div class="kgl-icon blue">💰</div>
+            <h3>Harga Terjangkau</h3>
+            <p>
+              Parfum berkualitas tidak harus mahal. Nikmati wangi premium dengan
+              harga yang ramah di kantong.
+            </p>
+          </div>
+          <div class="kgl-card anim delay-4">
+            <div class="kgl-icon pink">📍</div>
+            <h3>8 Cabang Dekat Anda</h3>
+            <p>
+              Tersebar di berbagai kecamatan, kami selalu hadir dekat dengan
+              Anda untuk kemudahan berbelanja.
+            </p>
+          </div>
+          <div class="kgl-card anim delay-5">
+            <div class="kgl-icon blue">🚚</div>
+            <h3>Layanan Pengiriman</h3>
+            <p>
+              Tidak sempat datang ke toko? Pesan via WhatsApp dan kami siap
+              antar ke lokasi Anda.
+            </p>
+          </div>
+          <div class="kgl-card anim">
+            <div class="kgl-icon pink">⭐</div>
+            <h3>500+ Pelanggan Puas</h3>
+            <p>
+              Ribuan pelanggan sudah mempercayakan kebutuhan parfum mereka
+              kepada kami.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PRODUK ═══ -->
+    <section id="produk">
+      <div class="container">
+        <div class="produk-header">
+          <div class="section-eyebrow anim">Koleksi Kami</div>
+          <h2 class="section-title anim delay-1">
+            Pilih <em>Kategori</em> Parfum
+          </h2>
+          <p class="section-desc anim delay-2">
+            Kami memiliki dua kategori utama produk — pilih sesuai kebutuhan
+            Anda dan temukan koleksi lengkapnya.
+          </p>
+        </div>
+        <div class="kategori-grid">
+          <a href="parfum-baju.html" class="kategori-card anim delay-1">
+            <div class="kategori-bg biru">🌸</div>
+            <div class="kategori-body">
+              <div class="tag tag-blue" style="margin-bottom: 0.8rem">
+                Parfum Baju
+              </div>
+              <h3>Parfum Baju</h3>
+              <p>
+                Wewangian eksklusif untuk tubuh dan pakaian Anda. Aroma tahan
+                lama yang meningkatkan kepercayaan diri.
+              </p>
+              <div class="kategori-preview">
+                <span>Floral</span><span>Woody</span><span>Fresh</span
+                ><span>Oriental</span><span>Fruity</span>
+              </div>
+              <span class="kategori-link">Lihat Semua Produk →</span>
+            </div>
+          </a>
+          <a href="parfum-laundry.html" class="kategori-card anim delay-2">
+            <div class="kategori-bg pink">🫧</div>
+            <div class="kategori-body">
+              <div class="tag tag-pink" style="margin-bottom: 0.8rem">
+                Parfum Laundry
+              </div>
+              <h3>Parfum Laundry</h3>
+              <p>
+                Pewangi pakaian cucian yang membuat baju Anda harum segar setiap
+                saat. Aman untuk semua jenis kain.
+              </p>
+              <div class="kategori-preview">
+                <span>Soft Clean</span><span>Ocean</span><span>Lavender</span
+                ><span>Rose</span><span>Baby Fresh</span>
+              </div>
+              <span class="kategori-link">Lihat Semua Produk →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CARA PESAN ═══ -->
+    <section id="cara-pesan">
+      <div class="container">
+        <div class="section-eyebrow anim">Mudah & Cepat</div>
+        <h2 class="section-title anim delay-1">Cara <em>Pemesanan</em></h2>
+        <p class="section-desc anim delay-2">
+          Dua cara mudah untuk mendapatkan produk Mekar Wangi Indonesia.
+        </p>
+        <div class="cara-tabs anim delay-3">
+          <button class="cara-tab active" onclick="switchTab('online')">
+            📱 Pesan Online
+          </button>
+          <button class="cara-tab" onclick="switchTab('offline')">
+            🏪 Datang Langsung
+          </button>
+        </div>
+        <div class="cara-content active" id="tab-online">
+          <div class="cara-step">
+            <div class="cara-step-num">01</div>
+            <div class="cara-step-icon">🔍</div>
+            <h4>Pilih Produk</h4>
+            <p>
+              Lihat katalog produk kami di website atau Instagram. Tentukan
+              produk yang Anda inginkan.
+            </p>
+          </div>
+          <div class="cara-step">
+            <div class="cara-step-num">02</div>
+            <div class="cara-step-icon">💬</div>
+            <h4>Chat WhatsApp</h4>
+            <p>
+              Hubungi kami via WhatsApp, sebutkan produk dan jumlah yang
+              diinginkan.
+            </p>
+          </div>
+          <div class="cara-step">
+            <div class="cara-step-num">03</div>
+            <div class="cara-step-icon">💳</div>
+            <h4>Konfirmasi & Bayar</h4>
+            <p>
+              Konfirmasi pesanan dan lakukan pembayaran via transfer atau COD
+              (area tertentu).
+            </p>
+          </div>
+          <div class="cara-step">
+            <div class="cara-step-num">04</div>
+            <div class="cara-step-icon">📦</div>
+            <h4>Pesanan Dikirim</h4>
+            <p>
+              Produk kami kemas dengan rapi dan dikirim ke alamat Anda. Estimasi
+              1–2 hari.
+            </p>
+          </div>
+        </div>
+        <div class="cara-content" id="tab-offline">
+          <div class="cara-step">
+            <div class="cara-step-num">01</div>
+            <div class="cara-step-icon">📍</div>
+            <h4>Temukan Cabang Terdekat</h4>
+            <p>
+              Cek daftar cabang kami di bagian bawah halaman ini dan pilih yang
+              paling dekat dari lokasi Anda.
+            </p>
+          </div>
+          <div class="cara-step">
+            <div class="cara-step-num">02</div>
+            <div class="cara-step-icon">🚗</div>
+            <h4>Kunjungi Toko</h4>
+            <p>
+              Datang langsung ke toko kami. Kami buka Senin–Sabtu pukul
+              08.00–20.00 WIB.
+            </p>
+          </div>
+          <div class="cara-step">
+            <div class="cara-step-num">03</div>
+            <div class="cara-step-icon">👃</div>
+            <h4>Coba & Pilih</h4>
+            <p>
+              Rasakan langsung aroma produk kami. Tim kami siap membantu Anda
+              menemukan parfum yang tepat.
+            </p>
+          </div>
+          <div class="cara-step">
+            <div class="cara-step-num">04</div>
+            <div class="cara-step-icon">🛍️</div>
+            <h4>Bayar & Bawa Pulang</h4>
+            <p>
+              Bayar di kasir dan bawa pulang produk pilihan Anda. Terima kasih
+              sudah berkunjung!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TESTIMONI ═══ -->
+    <section id="testimoni">
+      <div class="container">
+        <div class="section-eyebrow anim">Ulasan Pelanggan</div>
+        <h2 class="section-title anim delay-1">
+          Kata Mereka <em>Tentang Kami</em>
+        </h2>
+        <p class="section-desc anim delay-2">
+          Kepercayaan pelanggan adalah motivasi terbesar kami untuk terus
+          berkembang.
+        </p>
+        <div class="testi-grid">
+          <div class="testi-card anim delay-1">
+            <div class="testi-stars">★★★★★</div>
+            <blockquote>
+              "Parfum bajunya wangi banget dan tahan lama! Dari pagi sampai
+              malam masih tercium. Harganya juga sangat worth it, sudah jadi
+              langganan tetap saya."
+            </blockquote>
+            <div class="testi-user">
+              <div class="testi-avatar av-pink">👩</div>
+              <div>
+                <strong>Siti Rahayu</strong>
+                <span>Pelanggan Setia, Cabang [Nama Kecamatan]</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card anim delay-2">
+            <div class="testi-stars">★★★★★</div>
+            <blockquote>
+              "Parfum laundry-nya beda banget dari yang lain, lebih tahan lama
+              dan tidak menyengat. Cocok banget untuk pakaian anak-anak saya."
+            </blockquote>
+            <div class="testi-user">
+              <div class="testi-avatar av-blue">👩‍👦</div>
+              <div>
+                <strong>Dewi Lestari</strong>
+                <span>Ibu Rumah Tangga, [Nama Kota]</span>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card anim delay-3">
+            <div class="testi-stars">★★★★★</div>
+            <blockquote>
+              "Saya beli untuk dijual kembali di warung. Pelanggan saya suka
+              banget, sudah repeat order berkali-kali. Harga grosir juga
+              bersahabat!"
+            </blockquote>
+            <div class="testi-user">
+              <div class="testi-avatar av-mix">🧑‍💼</div>
+              <div>
+                <strong>Budi Hartono</strong>
+                <span>Reseller, [Nama Kota]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section id="faq">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3rem">
+          <div
+            class="section-eyebrow anim"
+            style="justify-content: center; gap: 0.7rem"
+          >
+            <span
+              style="
+                width: 28px;
+                height: 1.5px;
+                background: var(--blue);
+                display: inline-block;
+              "
+            ></span>
+            Pertanyaan Umum
+          </div>
+          <h2 class="section-title anim delay-1">FAQ</h2>
+          <p class="section-desc anim delay-2" style="margin: 0 auto">
+            Jawaban untuk pertanyaan yang sering kami terima.
+          </p>
+        </div>
+        <div class="faq-wrap">
+          <div class="faq-item anim">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Apakah parfum yang dijual original?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Ya, semua produk kami adalah original dan telah melalui proses
+              seleksi kualitas yang ketat. Kami berkomitmen untuk hanya menjual
+              produk yang aman dan berkualitas tinggi untuk pelanggan kami.
+            </div>
+          </div>
+          <div class="faq-item anim delay-1">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Berapa minimum order untuk pembelian?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Tidak ada minimum order untuk pembelian eceran. Untuk pembelian
+              grosir atau reseller, silakan hubungi kami via WhatsApp untuk
+              informasi lebih lanjut mengenai harga dan syaratnya.
+            </div>
+          </div>
+          <div class="faq-item anim delay-2">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Apakah bisa kirim ke luar kota?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Ya, kami melayani pengiriman ke seluruh Indonesia melalui jasa
+              ekspedisi pilihan. Biaya pengiriman ditanggung pembeli dan akan
+              dikonfirmasi saat proses pemesanan.
+            </div>
+          </div>
+          <div class="faq-item anim delay-3">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Parfum laundry aman untuk semua jenis kain?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Ya, parfum laundry kami diformulasikan khusus agar aman untuk
+              berbagai jenis kain termasuk kain sensitif seperti sutera dan wol.
+              Tidak meninggalkan noda dan tidak merusak warna pakaian.
+            </div>
+          </div>
+          <div class="faq-item anim delay-4">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Bagaimana cara menjadi reseller Mekar Wangi?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Kami membuka kesempatan kerjasama reseller! Hubungi kami via
+              WhatsApp dengan menyebutkan minat Anda sebagai reseller. Tim kami
+              akan menjelaskan sistem, harga, dan keuntungan yang bisa Anda
+              dapatkan.
+            </div>
+          </div>
+          <div class="faq-item anim delay-5">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Metode pembayaran apa saja yang diterima?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-a">
+              Kami menerima pembayaran tunai (untuk pembelian langsung di toko),
+              transfer bank, dan dompet digital seperti GoPay, OVO, dan Dana.
+              COD tersedia untuk area tertentu.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ GALERI ═══ -->
+    <section id="galeri">
+      <div class="container">
+        <div class="section-eyebrow anim">Galeri</div>
+        <h2 class="section-title anim delay-1">Foto <em>Produk & Toko</em></h2>
+        <p class="section-desc anim delay-2">
+          Sekilas tampilan produk dan suasana toko Mekar Wangi Indonesia.
+        </p>
+        <div class="galeri-grid anim delay-3">
+          <div class="galeri-item">
+            <div class="galeri-placeholder gal-1">🌸</div>
+          </div>
+          <div class="galeri-item">
+            <div class="galeri-placeholder gal-2">🫧</div>
+          </div>
+          <div class="galeri-item">
+            <div class="galeri-placeholder gal-3">✨</div>
+          </div>
+          <div class="galeri-item">
+            <div class="galeri-placeholder gal-4">🌺</div>
+          </div>
+          <div class="galeri-item">
+            <div class="galeri-placeholder gal-5">🌿</div>
+          </div>
+          <div class="galeri-item">
+            <div class="galeri-placeholder gal-6">💫</div>
+          </div>
+        </div>
+        <p class="galeri-note anim">
+          📸 Ganti placeholder di atas dengan foto produk dan toko Anda yang
+          sebenarnya
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══ CABANG ═══ -->
+    <section id="cabang">
+      <div class="container">
+        <div class="section-eyebrow anim">Lokasi</div>
+        <h2 class="section-title anim delay-1">
+          Temukan <em>Cabang</em> Terdekat
+        </h2>
+        <p class="section-desc anim delay-2">
+          Kami hadir di 8 kecamatan di Kabupaten [Nama Kabupaten]. Kunjungi kami
+          hari ini!
+        </p>
+        <div class="cabang-grid">
+          <!-- Cabang 1 -->
+          <div class="cabang-card anim delay-1">
+            <div class="cabang-num">Cabang 01</div>
+            <h4>Cabang [Nama Kecamatan 1]</h4>
+            <address>
+              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
+              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+            </address>
+            <div class="cabang-actions">
+              <button
+                class="cabang-btn"
+                onclick="
+                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_1')
+                "
+              >
+                📍 Google Maps
+              </button>
+              <button
+                class="cabang-btn wa"
+                onclick="window.open('https://wa.me/628123456789')"
+              >
+                💬 WhatsApp
+              </button>
+            </div>
+          </div>
+          <!-- Cabang 2 -->
+          <div class="cabang-card anim delay-2">
+            <div class="cabang-num">Cabang 02</div>
+            <h4>Cabang [Nama Kecamatan 2]</h4>
+            <address>
+              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
+              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+            </address>
+            <div class="cabang-actions">
+              <button
+                class="cabang-btn"
+                onclick="
+                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_2')
+                "
+              >
+                📍 Google Maps
+              </button>
+              <button
+                class="cabang-btn wa"
+                onclick="window.open('https://wa.me/628123456789')"
+              >
+                💬 WhatsApp
+              </button>
+            </div>
+          </div>
+          <!-- Cabang 3 -->
+          <div class="cabang-card anim delay-3">
+            <div class="cabang-num">Cabang 03</div>
+            <h4>Cabang [Nama Kecamatan 3]</h4>
+            <address>
+              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
+              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+            </address>
+            <div class="cabang-actions">
+              <button
+                class="cabang-btn"
+                onclick="
+                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_3')
+                "
+              >
+                📍 Google Maps
+              </button>
+              <button
+                class="cabang-btn wa"
+                onclick="window.open('https://wa.me/628123456789')"
+              >
+                💬 WhatsApp
+              </button>
+            </div>
+          </div>
+          <!-- Cabang 4 -->
+          <div class="cabang-card anim delay-4">
+            <div class="cabang-num">Cabang 04</div>
+            <h4>Cabang [Nama Kecamatan 4]</h4>
+            <address>
+              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
+              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+            </address>
+            <div class="cabang-actions">
+              <button
+                class="cabang-btn"
+                onclick="
+                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_4')
+                "
+              >
+                📍 Google Maps
+              </button>
+              <button
+                class="cabang-btn wa"
+                onclick="window.open('https://wa.me/628123456789')"
+              >
+                💬 WhatsApp
+              </button>
+            </div>
+          </div>
+          <!-- Cabang 5 -->
+          <div class="cabang-card anim delay-5">
+            <div class="cabang-num">Cabang 05</div>
+            <h4>Cabang [Nama Kecamatan 5]</h4>
+            <address>
+              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
+              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+            </address>
+            <div class="cabang-actions">
+              <button
+                class="cabang-btn"
+                onclick="
+                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_5')
+                "
+              >
+                📍 Google Maps
+              </button>
+              <button
+                class="cabang-btn wa"
+                onclick="window.open('https://wa.me/628123456789')"
+              >
+                💬 WhatsApp
+              </button>
+            </div>
+          </div>
+          <!-- Cabang 6 -->
+          <div class="cabang-card anim">
+            <div class="cabang-num">Cabang 06</div>
+            <h4>Cabang [Nama Kecamatan 6]</h4>
+            <address>
+              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
+              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+            </address>
+            <div class="cabang-actions">
+              <button
+                class="cabang-btn"
+                onclick="
+                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_6')
+                "
+              >
+                📍 Google Maps
+              </button>
+              <button
+                class="cabang-btn wa"
+                onclick="window.open('https://wa.me/628123456789')"
+              >
+                💬 WhatsApp
+              </button>
+            </div>
+          </div>
+          <!-- Cabang 7 -->
+          <div class="cabang-card anim delay-1">
+            <div class="cabang-num">Cabang 07</div>
+            <h4>Cabang [Nama Kecamatan 7]</h4>
+            <address>
+              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
+              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+            </address>
+            <div class="cabang-actions">
+              <button
+                class="cabang-btn"
+                onclick="
+                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_7')
+                "
+              >
+                📍 Google Maps
+              </button>
+              <button
+                class="cabang-btn wa"
+                onclick="window.open('https://wa.me/628123456789')"
+              >
+                💬 WhatsApp
+              </button>
+            </div>
+          </div>
+          <!-- Cabang 8 -->
+          <div class="cabang-card anim delay-2">
+            <div class="cabang-num">Cabang 08</div>
+            <h4>Cabang [Nama Kecamatan 8]</h4>
+            <address>
+              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
+              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+            </address>
+            <div class="cabang-actions">
+              <button
+                class="cabang-btn"
+                onclick="
+                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_8')
+                "
+              >
+                📍 Google Maps
+              </button>
+              <button
+                class="cabang-btn wa"
+                onclick="window.open('https://wa.me/628123456789')"
+              >
+                💬 WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer" id="kontak">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Mekar <span>Wangi</span> Indonesia</div>
+          <p class="footer-desc">
+            Menghadirkan parfum baju dan parfum laundry berkualitas premium
+            dengan harga terjangkau. Tersedia di 8 cabang.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#keunggulan">Keunggulan</a></li>
+            <li><a href="parfum-baju.html">Parfum Baju</a></li>
+            <li><a href="parfum-laundry.html">Parfum Laundry</a></li>
+            <li><a href="#cara-pesan">Cara Pesan</a></li>
+            <li><a href="#cabang">Cabang</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Produk</h4>
+          <ul>
+            <li><a href="parfum-baju.html">Parfum Baju</a></li>
+            <li><a href="parfum-laundry.html">Parfum Laundry</a></li>
+            <li><a href="#">Promo & Diskon</a></li>
+            <li><a href="#">Paket Reseller</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontak</h4>
+          <ul>
+            <li>
+              <a href="https://wa.me/628123456789"
+                >WhatsApp: +62 812-XXXX-XXXX</a
+              >
+            </li>
+            <li><a href="#">Instagram: @mekwangiindonesia</a></li>
+            <li><a href="#">Email: [email@domain.com]</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Mekar Wangi Indonesia. Semua hak dilindungi.</p>
+        <div class="footer-socials">
+          <a href="#" title="Instagram">📸</a>
+          <a href="#" title="WhatsApp">💬</a>
+          <a href="#" title="TikTok">🎵</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WA -->
+    <a
+      href="https://wa.me/628123456789?text=Halo%20Mekar%20Wangi%2C%20saya%20mau%20tanya%20produk"
+      class="float-wa"
+      target="_blank"
+      title="Chat WhatsApp"
+      >💬</a
+    >
+
+    <script>
+      // Navbar scroll
+      window.addEventListener("scroll", () => {
+        document
+          .getElementById("navbar")
+          .classList.toggle("scrolled", window.scrollY > 30);
+      });
+
+      // Scroll animation
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".anim").forEach((el) => observer.observe(el));
+
+      // Tab cara pesan
+      function switchTab(tab) {
+        document
+          .querySelectorAll(".cara-tab")
+          .forEach((t) => t.classList.remove("active"));
+        document
+          .querySelectorAll(".cara-content")
+          .forEach((c) => c.classList.remove("active"));
+        event.target.classList.add("active");
+        document.getElementById("tab-" + tab).classList.add("active");
+      }
+
+      // FAQ accordion
+      function toggleFaq(btn) {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains("open");
+        document
+          .querySelectorAll(".faq-item")
+          .forEach((i) => i.classList.remove("open"));
+        if (!isOpen) item.classList.add("open");
+      }
+
+      // Mobile menu toggle
+      function toggleMenu() {
+        const links = document.querySelector(".nav-links");
+        links.style.display = links.style.display === "flex" ? "none" : "flex";
+        links.style.flexDirection = "column";
+        links.style.position = "absolute";
+        links.style.top = "64px";
+        links.style.left = "0";
+        links.style.right = "0";
+        links.style.background = "var(--white)";
+        links.style.padding = "1rem 5%";
+        links.style.borderBottom = "1px solid var(--border)";
+        links.style.boxShadow = "var(--shadow-md)";
+      }
+    </script>
+  </body>
+</html>

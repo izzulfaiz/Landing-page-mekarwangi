@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Koleksi parfum laundry Mekar Wangi Indonesia. Pewangi pakaian cucian tahan lama, aman untuk semua jenis kain. Tersedia berbagai varian aroma."
+    />
+    <meta
+      name="keywords"
+      content="parfum laundry, pewangi pakaian, pewangi cucian, parfum baju cucian, Mekar Wangi Indonesia"
+    />
+    <title>Parfum Laundry – Mekar Wangi Indonesia</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* ── PAGE HERO ── */
+      .page-hero {
+        margin-top: 64px;
+        padding: 5rem 5% 4rem;
+        background: linear-gradient(
+          135deg,
+          var(--pink-pale) 0%,
+          var(--white) 60%,
+          var(--blue-pale) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        top: -80px;
+        right: -80px;
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(212, 132, 158, 0.2) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .page-hero-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2rem;
+        align-items: center;
+      }
+      .page-hero h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        margin-bottom: 0.8rem;
+      }
+      .page-hero h1 em {
+        color: var(--pink);
+      }
+      .page-hero p {
+        font-size: 0.96rem;
+        color: var(--mid);
+        max-width: 480px;
+      }
+      .page-hero-stats {
+        display: flex;
+        gap: 2rem;
+        flex-shrink: 0;
+      }
+      .pstat {
+        text-align: center;
+      }
+      .pstat strong {
+        display: block;
+        font-family: var(--ff-display);
+        font-size: 1.8rem;
+        color: var(--dark);
+      }
+      .pstat span {
+        font-size: 0.72rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      /* ── KEUNGGULAN MINI ── */
+      .keunggulan-mini {
+        background: var(--dark);
+        padding: 1.5rem 5%;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .kgl-mini-item {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.82rem;
+      }
+      .kgl-mini-item span {
+        font-size: 1rem;
+      }
+
+      /* ── FILTER ── */
+      .filter-bar {
+        padding: 1.5rem 5%;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 64px;
+        z-index: 50;
+      }
+      .filter-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .filter-label {
+        font-size: 0.78rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-right: 0.5rem;
+        font-weight: 500;
+      }
+      .filter-btn {
+        padding: 0.45rem 1.1rem;
+        border-radius: 99px;
+        border: 1.5px solid var(--border);
+        background: none;
+        color: var(--mid);
+        font-size: 0.82rem;
+        cursor: pointer;
+        font-family: var(--ff-body);
+        transition: var(--transition);
+      }
+      .filter-btn:hover {
+        border-color: var(--pink-soft);
+        color: var(--dark);
+      }
+      .filter-btn.active {
+        background: var(--pink);
+        border-color: var(--pink);
+        color: var(--white);
+      }
+
+      /* ── PRODUK GRID ── */
+      #produk-list {
+        padding: 4rem 5%;
+      }
+      .produk-list-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .produk-count {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 2rem;
+      }
+      .produk-grid-main {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+      .produk-card-main {
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        background: var(--white);
+        transition: var(--transition);
+        cursor: pointer;
+      }
+      .produk-card-main:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--pink-soft);
+      }
+      .produk-thumb {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        position: relative;
+      }
+      .produk-thumb.l1 {
+        background: linear-gradient(135deg, #eff6ff, #bfdbfe);
+      }
+      .produk-thumb.l2 {
+        background: linear-gradient(135deg, #fdf4ff, #e9d5ff);
+      }
+      .produk-thumb.l3 {
+        background: linear-gradient(135deg, #f0fdf4, #bbf7d0);
+      }
+      .produk-thumb.l4 {
+        background: linear-gradient(135deg, #fff7ed, #fed7aa);
+      }
+      .produk-thumb.l5 {
+        background: linear-gradient(135deg, #fdf2f8, #fbcfe8);
+      }
+      .produk-thumb.l6 {
+        background: linear-gradient(135deg, #f0f9ff, #bae6fd);
+      }
+      .produk-badge-new {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: var(--pink);
+        color: var(--white);
+        font-size: 0.65rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 99px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+      }
+      .produk-badge-hot {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: #f59e0b;
+        color: var(--white);
+        font-size: 0.65rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 99px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+      }
+      .produk-info-main {
+        padding: 1.2rem;
+      }
+      .produk-cat {
+        font-size: 0.7rem;
+        color: var(--pink);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        margin-bottom: 0.3rem;
+      }
+      .produk-name {
+        font-family: var(--ff-display);
+        font-size: 1.1rem;
+        color: var(--dark);
+        margin-bottom: 0.25rem;
+      }
+      .produk-desc-short {
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-bottom: 0.8rem;
+        line-height: 1.6;
+      }
+      .produk-notes {
+        display: flex;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.8rem;
+      }
+      .produk-note {
+        font-size: 0.68rem;
+        padding: 0.18rem 0.55rem;
+        border-radius: 99px;
+        background: var(--pink-pale);
+        color: var(--pink);
+      }
+      .produk-note.ukuran {
+        background: var(--blue-pale);
+        color: var(--blue);
+      }
+      .produk-price {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .price-main {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--dark);
+      }
+      .price-old {
+        font-size: 0.8rem;
+        text-decoration: line-through;
+        color: var(--muted);
+        font-weight: 300;
+      }
+      .produk-wa {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-top: 1rem;
+        padding: 0.55rem 1rem;
+        border-radius: 99px;
+        background: #25d366;
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 500;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        font-family: var(--ff-body);
+        width: 100%;
+        justify-content: center;
+      }
+      .produk-wa:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+      }
+
+      /* ── INFO BOX ── */
+      .info-box {
+        background: var(--pink-pale);
+        border: 1px solid var(--pink-soft);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem 2rem;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        margin-bottom: 2.5rem;
+      }
+      .info-box .info-icon {
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+      .info-box h4 {
+        font-size: 0.92rem;
+        color: var(--dark);
+        margin-bottom: 0.3rem;
+        font-family: var(--ff-body);
+        font-weight: 500;
+      }
+      .info-box p {
+        font-size: 0.82rem;
+        color: var(--mid);
+        line-height: 1.7;
+      }
+
+      /* ── CTA BOTTOM ── */
+      .cta-bottom {
+        background: linear-gradient(135deg, var(--pink-pale), var(--blue-pale));
+        border-radius: var(--radius-xl);
+        padding: 3rem;
+        text-align: center;
+        margin-top: 4rem;
+      }
+      .cta-bottom h3 {
+        font-family: var(--ff-display);
+        font-size: 1.8rem;
+        margin-bottom: 0.6rem;
+      }
+      .cta-bottom p {
+        font-size: 0.9rem;
+        color: var(--mid);
+        margin-bottom: 1.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .page-hero-inner {
+          grid-template-columns: 1fr;
+        }
+        .page-hero-stats {
+          justify-content: flex-start;
+        }
+        .keunggulan-mini {
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="nav-logo"
+        >Mekar <span>Wangi</span> Indonesia</a
+      >
+      <ul class="nav-links">
+        <li><a href="index.html#keunggulan">Keunggulan</a></li>
+        <li><a href="parfum-baju.html">Parfum Baju</a></li>
+        <li><a href="parfum-laundry.html" class="active">Parfum Laundry</a></li>
+        <li><a href="index.html#cara-pesan">Cara Pesan</a></li>
+        <li><a href="index.html#cabang">Cabang</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a
+          href="https://wa.me/628123456789"
+          class="btn btn-pink"
+          target="_blank"
+          >💬 Order WA</a
+        >
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+      <a href="index.html">Beranda</a> › Parfum Laundry
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <div>
+          <div class="tag tag-pink" style="margin-bottom: 1rem">
+            Parfum Laundry
+          </div>
+          <h1>Koleksi <em>Parfum Laundry</em><br />Untuk Pakaian Anda</h1>
+          <p style="margin-top: 0.8rem">
+            Pewangi pakaian cucian berkualitas tinggi yang membuat baju Anda
+            harum segar tahan lama. Aman untuk semua jenis kain.
+          </p>
+        </div>
+        <div class="page-hero-stats">
+          <div class="pstat">
+            <strong>[XX]+</strong>
+            <span>Varian Aroma</span>
+          </div>
+          <div class="pstat">
+            <strong>100%</strong>
+            <span>Aman di Kain</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEUNGGULAN MINI -->
+    <div class="keunggulan-mini">
+      <div class="kgl-mini-item"><span>✅</span> Tidak meninggalkan noda</div>
+      <div class="kgl-mini-item">
+        <span>✅</span> Aman untuk semua jenis kain
+      </div>
+      <div class="kgl-mini-item">
+        <span>✅</span> Aroma tahan lama setelah dijemur
+      </div>
+      <div class="kgl-mini-item">
+        <span>✅</span> Tidak merusak warna pakaian
+      </div>
+      <div class="kgl-mini-item">
+        <span>✅</span> Tersedia berbagai ukuran botol
+      </div>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <div class="filter-inner">
+        <span class="filter-label">Filter:</span>
+        <button class="filter-btn active" onclick="filterProduk('semua', this)">
+          Semua
+        </button>
+        <button class="filter-btn" onclick="filterProduk('floral', this)">
+          🌸 Floral
+        </button>
+        <button class="filter-btn" onclick="filterProduk('fresh', this)">
+          🌊 Fresh & Clean
+        </button>
+        <button class="filter-btn" onclick="filterProduk('baby', this)">
+          🍼 Baby Fresh
+        </button>
+        <button class="filter-btn" onclick="filterProduk('lavender', this)">
+          💜 Lavender
+        </button>
+        <button class="filter-btn" onclick="filterProduk('citrus', this)">
+          🍋 Citrus
+        </button>
+      </div>
+    </div>
+
+    <!-- PRODUK LIST -->
+    <section id="produk-list">
+      <div class="produk-list-inner">
+        <!-- Info Box -->
+        <div class="info-box anim">
+          <div class="info-icon">💡</div>
+          <div>
+            <h4>Cara Penggunaan Parfum Laundry</h4>
+            <p>
+              Tambahkan parfum laundry ke bilasan terakhir cucian Anda, atau
+              semprotkan langsung ke pakaian yang sudah kering. Dosis yang
+              dianjurkan: [XX] ml per [X] kg cucian.
+            </p>
+          </div>
+        </div>
+
+        <p class="produk-count" id="produk-count">
+          Menampilkan <strong>12</strong> produk unggulan
+        </p>
+        <div class="produk-grid-main" id="produk-grid">
+          <!-- Produk 1 -->
+          <div class="produk-card-main anim" data-kategori="floral">
+            <div class="produk-thumb l5">
+              <span class="produk-badge-hot">🔥 Terlaris</span>
+              🌸
+            </div>
+            <div class="produk-info-main">
+              <div class="produk-cat">Floral</div>
+              <div class="produk-name">[Nama Produk 1]</div>
+              <div class="produk-desc-short">
+                Aroma bunga yang lembut dan mewah untuk cucian harian Anda.
+              </div>
+              <div class="produk-notes">
+                <span class="produk-note">Rose & Jasmine</span>
+                <span class="produk-note ukuran">500ml / 1L</span>
+              </div>
+              <div class="produk-price">
+                <span class="price-old">Rp [Harga Coret]</span>
+                <span class="price-main">Rp [Harga Jual]</span>
+              </div>
+              <button class="produk-wa" onclick="orderWA('[Nama Produk 1]')">
+                💬 Pesan via WA
+              </button>
+            </div>
+          </div>
+
+          <!-- Produk 2 -->
+          <div class="produk-card-main anim delay-1" data-kategori="fresh">
+            <div class="produk-thumb l6">
+              <span class="produk-badge-new">✨ Baru</span>
+              🌊
+            </div>
+            <div class="produk-info-main">
+              <div class="produk-cat">Fresh & Clean</div>
+              <div class="produk-name">[Nama Produk 2]</div>
+              <div class="produk-desc-short">
+                Kesegaran bersih yang membuat pakaian terasa baru sepanjang
+                hari.
+              </div>
+              <div class="produk-notes">
+                <span class="produk-note">Ocean Fresh</span>
+                <span class="produk-note ukuran">500ml / 1L</span>
+              </div>
+              <div class="produk-price">
+                <span class="price-main">Rp [Harga Jual]</span>
+              </div>
+              <button class="produk-wa" onclick="orderWA('[Nama Produk 2]')">
+                💬 Pesan via WA
+              </button>
+            </div>
+          </div>
+
+          <!-- Produk 3 -->
+          <div class="produk-card-main anim delay-2" data-kategori="baby">
+            <div class="produk-thumb l1">
+              <span class="produk-badge-hot">🔥 Terlaris</span>
+              🍼
+            </div>
+            <div class="produk-info-main">
+              <div class="produk-cat">Baby Fresh</div>
+              <div class="produk-name">[Nama Produk 3]</div>
+              <div class="produk-desc-short">
+                Formula lembut khusus pakaian bayi dan kulit sensitif.
+                Hypoallergenic.
+              </div>
+              <div class="produk-notes">
+                <span class="produk-note">Hypoallergenic</span>
+                <span class="produk-note ukuran">500ml / 1L</span>
+              </div>
+              <div class="produk-price">
+                <span class="price-old">Rp [Harga Coret]</span>
+                <span class="price-main">Rp [Harga Jual]</span>
+              </div>
+              <button class="produk-wa" onclick="orderWA('[Nama Produk 3]')">
+                💬 Pesan via WA
+              </button>
+            </div>
+          </div>
+
+          <!-- Produk 4 -->
+          <div class="produk-card-main anim delay-3" data-kategori="lavender">
+            <div class="produk-thumb l2">🌿</div>
+            <div class="produk-info-main">
+              <div class="produk-cat">Lavender</div>
+              <div class="produk-name">[Nama Produk 4]</div>
+              <div class="produk-desc-short">
+                Aroma lavender yang menenangkan, sempurna untuk pakaian tidur
+                Anda.
+              </div>
+              <div class="produk-notes">
+                <span class="produk-note">Lavender Calm</span>
+                <span class="produk-note ukuran">500ml / 1L</span>
+              </div>
+              <div class="produk-price">
+                <span class="price-main">Rp [Harga Jual]</span>
+              </div>
+              <button class="produk-wa" onclick="orderWA('[Nama Produk 4]')">
+                💬 Pesan via WA
+              </button>
+            </div>
+          </div>
+
+          <!-- Produk 5 -->
+          <div class="produk-card-main anim delay-4" data-kategori="citrus">
+            <div class="produk-thumb l4">🍋</div>
+            <div class="produk-info-main">
+              <div class="produk-cat">Citrus</div>
+              <div class="produk-name">[Nama Produk 5]</div>
+              <div class="produk-desc-short">
+                Semangat citrus yang menyegarkan untuk pakaian kerja
+                sehari-hari.
+              </div>
+              <div class="produk-notes">
+                <span class="produk-note">Lemon Zest</span>
+                <span class="produk-note ukuran">500ml / 1L</span>
+              </div>
+              <div class="produk-price">
+                <span class="price-old">Rp [Harga Coret]</span>
+                <span class="price-main">Rp [Harga Jual]</span>
+              </div>
+              <button class="produk-wa" onclick="orderWA('[Nama Produk 5]')">
+                💬 Pesan via WA
+              </button>
+            </div>
+          </div>
+
+          <!-- Produk 6 -->
+          <div class="produk-card-main anim delay-5" data-kategori="fresh">
+            <div class="produk-thumb l3">
+              <span class="produk-badge-new">✨ Baru</span>
+              🍃
+            </div>
+            <div class="produk-info-main">
+              <div class="produk-cat">Fresh & Clean</div>
+              <div class="produk-name">[Nama Produk 6]</div>
+              <div class="produk-desc-short">
+                Teh hijau dan mint yang bersih, cocok untuk pakaian olahraga.
+              </div>
+              <div class="produk-notes">
+                <span class="produk-note">Green Tea Mint</span>
+                <span class="produk-note ukuran">500ml / 1L</span>
+              </div>
+              <div class="produk-price">
+                <span class="price-main">Rp [Harga Jual]</span>
+              </div>
+              <button class="produk-wa" onclick="orderWA('[Nama Produk 6]')">
+                💬 Pesan via WA
+              </button>
+            </div>
+          </div>
+
+          <!-- Produk 7 -->
+          <div class="produk-card-main anim" data-kategori="floral">
+            <div class="produk-thumb l5">🌺</div>
+            <div class="produk-info-main">
+              <div class="produk-cat">Floral</div>
+              <div class="produk-name">[Nama Produk 7]</div>
+              <div class="produk-desc-short">
+                Perpaduan melati dan mawar untuk cucian yang harum sepanjang
+                hari.
+              </div>
+              <div class="produk-notes">
+                <span class="produk-note">Jasmine Rose</span>
+                <span class="produk-note ukuran">500ml / 1L</span>
+              </div>
+              <div class="produk-price">
+                <span class="price-old">Rp [Harga Coret]</span>
+                <span class="price-main">Rp [Harga Jual]</span>
+              </div>
+              <button class="produk-wa" onclick="orderWA('[Nama Produk 7]')">
+                💬 Pesan via WA
+              </button>
+            </div>
+          </div>
+
+          <!-- Produk 8 -->
+          <div class="produk-card-main anim delay-1" data-kategori="lavender">
+            <div class="produk-thumb l2">
+              <span class="produk-badge-hot">🔥 Terlaris</span>
+              💜
+            </div>
+            <div class="produk-info-main">
+              <div class="produk-cat">Lavender</div>
+              <div class="produk-name">[Nama Produk 8]</div>
+              <div class="produk-desc-short">
+                Lavender premium dengan vanilla yang hangat dan mewah.
+              </div>
+              <div class="produk-notes">
+                <span class="produk-note">Lavender Vanilla</span>
+                <span class="produk-note ukuran">500ml / 1L</span>
+              </div>
+              <div class="produk-price">
+                <span class="price-main">Rp [Harga Jual]</span>
+              </div>
+              <button class="produk-wa" onclick="orderWA('[Nama Produk 8]')">
+                💬 Pesan via WA
+              </button>
+            </div>
+          </div>
+
+          <!-- Produk 9 -->
+          <div class="produk-card-main anim delay-2" data-kategori="baby">
+            <div class="produk-thumb l1">🌙</div>
+            <div class="produk-info-main">
+              <div class="produk-cat">Baby Fresh</div>
+              <div class="produk-name">[Nama Produk 9]</div>
+              <div class="produk-desc-short">
+                Formula ekstra lembut dengan wangi powder yang menenangkan si
+                kecil.
+              </div>
+              <div class="produk-notes">
+                <span class="produk-note">Baby Powder</span>
+                <span class="produk-note ukuran">500ml / 1L</span>
+              </div>
+              <div class="produk-price">
+                <span class="price-old">Rp [Harga Coret]</span>
+                <span class="price-main">Rp [Harga Jual]</span>
+              </div>
+              <button class="produk-wa" onclick="orderWA('[Nama Produk 9]')">
+                💬 Pesan via WA
+              </button>
+            </div>
+          </div>
+
+          <!-- Produk 10 -->
+          <div class="produk-card-main anim delay-3" data-kategori="citrus">
+            <div class="produk-thumb l4">🍊</div>
+            <div class="produk-info-main">
+              <div class="produk-cat">Citrus</div>
+              <div class="produk-name">[Nama Produk 10]</div>
+              <div class="produk-desc-short">
+                Jeruk bergamot yang segar dan elegan untuk cucian premium.
+              </div>
+              <div class="produk-notes">
+                <span class="produk-note">Bergamot</span>
+                <span class="produk-note ukuran">500ml / 1L</span>
+              </div>
+              <div class="produk-price">
+                <span class="price-main">Rp [Harga Jual]</span>
+              </div>
+              <button class="produk-wa" onclick="orderWA('[Nama Produk 10]')">
+                💬 Pesan via WA
+              </button>
+            </div>
+          </div>
+
+          <!-- Produk 11 -->
+          <div class="produk-card-main anim delay-4" data-kategori="fresh">
+            <div class="produk-thumb l6">🌬️</div>
+            <div class="produk-info-main">
+              <div class="produk-cat">Fresh & Clean</div>
+              <div class="produk-name">[Nama Produk 11]</div>
+              <div class="produk-desc-short">
+                Kesegaran angin pegunungan yang murni dan memberi rasa tenang.
+              </div>
+              <div class="produk-notes">
+                <span class="produk-note">Mountain Air</span>
+                <span class="produk-note ukuran">500ml / 1L</span>
+              </div>
+              <div class="produk-price">
+                <span class="price-old">Rp [Harga Coret]</span>
+                <span class="price-main">Rp [Harga Jual]</span>
+              </div>
+              <button class="produk-wa" onclick="orderWA('[Nama Produk 11]')">
+                💬 Pesan via WA
+              </button>
+            </div>
+          </div>
+
+          <!-- Produk 12 -->
+          <div class="produk-card-main anim delay-5" data-kategori="floral">
+            <div class="produk-thumb l5">
+              <span class="produk-badge-new">✨ Baru</span>
+              🌷
+            </div>
+            <div class="produk-info-main">
+              <div class="produk-cat">Floral</div>
+              <div class="produk-name">[Nama Produk 12]</div>
+              <div class="produk-desc-short">
+                Kelopak tulip dan peony yang feminim dan memikat hati.
+              </div>
+              <div class="produk-notes">
+                <span class="produk-note">Tulip & Peony</span>
+                <span class="produk-note ukuran">500ml / 1L</span>
+              </div>
+              <div class="produk-price">
+                <span class="price-main">Rp [Harga Jual]</span>
+              </div>
+              <button class="produk-wa" onclick="orderWA('[Nama Produk 12]')">
+                💬 Pesan via WA
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Bottom -->
+        <div class="cta-bottom anim">
+          <h3>Mau coba dulu sebelum beli banyak?</h3>
+          <p>
+            Kami menyediakan tester di semua cabang! Atau tanyakan via WhatsApp
+            untuk sampel produk.
+          </p>
+          <a
+            href="https://wa.me/628123456789?text=Halo%20Mekar%20Wangi%2C%20saya%20mau%20tanya%20parfum%20laundry"
+            class="btn btn-pink"
+            target="_blank"
+            >💬 Tanya via WhatsApp</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Mekar <span>Wangi</span> Indonesia</div>
+          <p class="footer-desc">
+            Menghadirkan parfum baju dan parfum laundry berkualitas premium
+            dengan harga terjangkau.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="parfum-baju.html">Parfum Baju</a></li>
+            <li><a href="parfum-laundry.html">Parfum Laundry</a></li>
+            <li><a href="index.html#cara-pesan">Cara Pesan</a></li>
+            <li><a href="index.html#cabang">Cabang</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kategori Laundry</h4>
+          <ul>
+            <li><a href="#">Floral</a></li>
+            <li><a href="#">Fresh & Clean</a></li>
+            <li><a href="#">Baby Fresh</a></li>
+            <li><a href="#">Lavender</a></li>
+            <li><a href="#">Citrus</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontak</h4>
+          <ul>
+            <li>
+              <a href="https://wa.me/628123456789"
+                >WhatsApp: +62 812-XXXX-XXXX</a
+              >
+            </li>
+            <li><a href="#">Instagram: @mekwangiindonesia</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Mekar Wangi Indonesia. Semua hak dilindungi.</p>
+        <div class="footer-socials">
+          <a href="#">📸</a><a href="#">💬</a><a href="#">🎵</a>
+        </div>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/628123456789" class="float-wa" target="_blank">💬</a>
+
+    <script>
+      window.addEventListener("scroll", () => {
+        document
+          .getElementById("navbar")
+          .classList.toggle("scrolled", window.scrollY > 30);
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".anim").forEach((el) => observer.observe(el));
+
+      function filterProduk(kategori, btn) {
+        document
+          .querySelectorAll(".filter-btn")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const cards = document.querySelectorAll(".produk-card-main");
+        let count = 0;
+        cards.forEach((card) => {
+          const match =
+            kategori === "semua" || card.dataset.kategori === kategori;
+          card.style.display = match ? "block" : "none";
+          if (match) count++;
+        });
+        document.getElementById("produk-count").innerHTML =
+          `Menampilkan <strong>${count}</strong> produk${kategori !== "semua" ? " — " + kategori : " unggulan"}`;
+      }
+
+      function orderWA(nama) {
+        window.open(
+          `https://wa.me/628123456789?text=Halo%20Mekar%20Wangi%2C%20saya%20mau%20pesan%20Parfum%20Laundry%3A%20${encodeURIComponent(nama)}`,
+          "_blank",
+        );
+      }
+
+      function toggleMenu() {
+        const links = document.querySelector(".nav-links");
+        links.style.display = links.style.display === "flex" ? "none" : "flex";
+        links.style.flexDirection = "column";
+        links.style.position = "absolute";
+        links.style.top = "64px";
+        links.style.left = "0";
+        links.style.right = "0";
+        links.style.background = "var(--white)";
+        links.style.padding = "1rem 5%";
+        links.style.borderBottom = "1px solid var(--border)";
+        links.style.boxShadow = "var(--shadow-md)";
+      }
+    </script>
+  </body>
+</html>
