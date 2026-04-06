@@ -3,18 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>Parfum Baju – Mekar Wangi Indonesia</title>
     <meta
       name="description"
-      content="Koleksi parfum baju Mekar Wangi Indonesia. Aroma tahan lama, harga terjangkau. Tersedia berbagai varian floral, woody, fresh, dan oriental."
+      content="Koleksi parfum baju Mekar Wangi Indonesia. Aroma floral, woody, fresh, oriental & fruity. Tahan lama, harga terjangkau."
     />
     <meta
       name="keywords"
-      content="parfum baju, wewangian pakaian, parfum tahan lama, Mekar Wangi Indonesia"
+      content="parfum baju, wewangian pakaian, parfum tahan lama, floral, woody, fresh, oriental, fruity, Mekar Wangi"
     />
-    <title>Parfum Baju – Mekar Wangi Indonesia</title>
+    <link
+      rel="canonical"
+      href="https://www.mekwangiindonesia.com/parfum-baju.html"
+    />
+
+    <!-- OG TAGS -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mekar Wangi Indonesia" />
+    <meta property="og:title" content="Parfum Baju – Mekar Wangi Indonesia" />
+    <meta
+      property="og:description"
+      content="Koleksi parfum baju pilihan: floral, woody, fresh, oriental & fruity. Aroma tahan lama, harga bersahabat!"
+    />
+    <meta
+      property="og:image"
+      content="https://www.mekwangiindonesia.com/images/og-parfum-baju.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:url"
+      content="https://www.mekwangiindonesia.com/parfum-baju.html"
+    />
+    <meta property="og:locale" content="id_ID" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Parfum Baju – Mekar Wangi Indonesia" />
+    <meta
+      name="twitter:description"
+      content="Koleksi parfum baju pilihan. Aroma tahan lama, harga bersahabat!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.mekwangiindonesia.com/images/og-parfum-baju.jpg"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      /* ── PAGE HERO ── */
       .page-hero {
         margin-top: 64px;
         padding: 5rem 5% 4rem;
@@ -82,8 +118,6 @@
         text-transform: uppercase;
         letter-spacing: 0.08em;
       }
-
-      /* ── FILTER ── */
       .filter-bar {
         padding: 1.5rem 5%;
         background: var(--white);
@@ -128,8 +162,6 @@
         border-color: var(--blue);
         color: var(--white);
       }
-
-      /* ── PRODUK GRID ── */
       #produk-list {
         padding: 4rem 5%;
       }
@@ -162,53 +194,38 @@
       }
       .produk-thumb {
         height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 4rem;
+        overflow: hidden;
         position: relative;
+        background: var(--blue-pale);
       }
-      .produk-thumb.f1 {
-        background: linear-gradient(135deg, #fdf2f8, #f5d4e3);
+      .produk-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.4s ease;
       }
-      .produk-thumb.f2 {
-        background: linear-gradient(135deg, #ebf3fa, #b8d4ec);
+      .produk-card-main:hover .produk-thumb img {
+        transform: scale(1.06);
       }
-      .produk-thumb.f3 {
-        background: linear-gradient(135deg, #f0fdf4, #bbf7d0);
-      }
-      .produk-thumb.f4 {
-        background: linear-gradient(135deg, #fff7ed, #fed7aa);
-      }
-      .produk-thumb.f5 {
-        background: linear-gradient(135deg, #f5f0ff, #ddd6fe);
-      }
-      .produk-thumb.f6 {
-        background: linear-gradient(135deg, #fff1f2, #fecdd3);
-      }
-      .produk-badge-new {
+      .badge-hot,
+      .badge-new {
         position: absolute;
         top: 12px;
         left: 12px;
-        background: var(--pink);
-        color: var(--white);
+        color: #fff;
         font-size: 0.65rem;
         padding: 0.2rem 0.6rem;
         border-radius: 99px;
         font-weight: 500;
         letter-spacing: 0.06em;
       }
-      .produk-badge-hot {
-        position: absolute;
-        top: 12px;
-        left: 12px;
+      .badge-hot {
         background: #f59e0b;
-        color: var(--white);
-        font-size: 0.65rem;
-        padding: 0.2rem 0.6rem;
-        border-radius: 99px;
-        font-weight: 500;
-        letter-spacing: 0.06em;
+      }
+      .badge-new {
+        background: var(--pink);
       }
       .produk-info-main {
         padding: 1.2rem;
@@ -266,6 +283,7 @@
       .produk-wa {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 0.4rem;
         margin-top: 1rem;
         padding: 0.55rem 1rem;
@@ -279,14 +297,11 @@
         cursor: pointer;
         font-family: var(--ff-body);
         width: 100%;
-        justify-content: center;
       }
       .produk-wa:hover {
         opacity: 0.9;
         transform: translateY(-1px);
       }
-
-      /* ── CTA BOTTOM ── */
       .cta-bottom {
         background: linear-gradient(135deg, var(--blue-pale), var(--pink-pale));
         border-radius: var(--radius-xl);
@@ -304,7 +319,6 @@
         color: var(--mid);
         margin-bottom: 1.5rem;
       }
-
       @media (max-width: 768px) {
         .page-hero-inner {
           grid-template-columns: 1fr;
@@ -316,7 +330,6 @@
     </style>
   </head>
   <body>
-    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
       <a href="index.html" class="nav-logo"
         >Mekar <span>Wangi</span> Indonesia</a
@@ -330,7 +343,7 @@
       </ul>
       <div class="nav-cta">
         <a
-          href="https://wa.me/628123456789"
+          href="https://wa.me/62895605854799"
           class="btn btn-pink"
           target="_blank"
           >💬 Order WA</a
@@ -341,10 +354,8 @@
       </div>
     </nav>
 
-    <!-- BREADCRUMB -->
     <div class="breadcrumb"><a href="index.html">Beranda</a> › Parfum Baju</div>
 
-    <!-- PAGE HERO -->
     <section class="page-hero">
       <div class="page-hero-inner">
         <div>
@@ -354,23 +365,18 @@
           <h1>Koleksi <em>Parfum Baju</em><br />Pilihan Terbaik</h1>
           <p style="margin-top: 0.8rem">
             Temukan aroma sempurna yang mencerminkan kepribadian Anda. Tahan
-            lama, berkualitas, dan harga bersahabat.
+            lama, berkualitas, harga bersahabat.
           </p>
         </div>
         <div class="page-hero-stats">
           <div class="pstat">
-            <strong>[XX]+</strong>
-            <span>Varian Aroma</span>
+            <strong>100+</strong><span>Varian Aroma</span>
           </div>
-          <div class="pstat">
-            <strong>100%</strong>
-            <span>Original</span>
-          </div>
+          <div class="pstat"><strong>100%</strong><span>Original</span></div>
         </div>
       </div>
     </section>
 
-    <!-- FILTER BAR -->
     <div class="filter-bar">
       <div class="filter-inner">
         <span class="filter-label">Filter:</span>
@@ -395,18 +401,20 @@
       </div>
     </div>
 
-    <!-- PRODUK LIST -->
     <section id="produk-list">
       <div class="produk-list-inner">
         <p class="produk-count" id="produk-count">
           Menampilkan <strong>12</strong> produk unggulan
         </p>
         <div class="produk-grid-main" id="produk-grid">
-          <!-- Produk 1 -->
           <div class="produk-card-main anim" data-kategori="floral">
-            <div class="produk-thumb f1">
-              <span class="produk-badge-hot">🔥 Terlaris</span>
-              🌹
+            <div class="produk-thumb">
+              <span class="badge-hot">🔥 Terlaris</span
+              ><img
+                src="images/baju-01.jpg"
+                alt="[Nama Produk 1]"
+                loading="lazy"
+              />
             </div>
             <div class="produk-info-main">
               <div class="produk-cat">Floral</div>
@@ -415,24 +423,29 @@
                 Aroma mawar segar yang elegan dan tahan sepanjang hari.
               </div>
               <div class="produk-notes">
-                <span class="produk-note">Rose</span>
-                <span class="produk-note">Jasmine</span>
+                <span class="produk-note">Rose</span
+                ><span class="produk-note">Jasmine</span>
               </div>
               <div class="produk-price">
-                <span class="price-old">Rp [Harga Coret]</span>
-                <span class="price-main">Rp [Harga Jual]</span>
+                <span class="price-old">Rp [Coret]</span
+                ><span class="price-main">Rp [Jual]</span>
               </div>
-              <button class="produk-wa" onclick="orderWA('[Nama Produk 1]')">
+              <button
+                class="produk-wa"
+                onclick="orderWA('[Nama Produk 1]', 'Parfum Baju')"
+              >
                 💬 Pesan via WA
               </button>
             </div>
           </div>
-
-          <!-- Produk 2 -->
           <div class="produk-card-main anim delay-1" data-kategori="fresh">
-            <div class="produk-thumb f2">
-              <span class="produk-badge-new">✨ Baru</span>
-              🌊
+            <div class="produk-thumb">
+              <span class="badge-new">✨ Baru</span
+              ><img
+                src="images/baju-02.jpg"
+                alt="[Nama Produk 2]"
+                loading="lazy"
+              />
             </div>
             <div class="produk-info-main">
               <div class="produk-cat">Fresh</div>
@@ -441,22 +454,29 @@
                 Kesegaran samudra yang memberi energi positif seharian.
               </div>
               <div class="produk-notes">
-                <span class="produk-note">Ocean</span>
-                <span class="produk-note">Aqua</span>
+                <span class="produk-note">Ocean</span
+                ><span class="produk-note">Aqua</span>
               </div>
               <div class="produk-price">
-                <span class="price-old">Rp [Harga Coret]</span>
-                <span class="price-main">Rp [Harga Jual]</span>
+                <span class="price-old">Rp [Coret]</span
+                ><span class="price-main">Rp [Jual]</span>
               </div>
-              <button class="produk-wa" onclick="orderWA('[Nama Produk 2]')">
+              <button
+                class="produk-wa"
+                onclick="orderWA('[Nama Produk 2]', 'Parfum Baju')"
+              >
                 💬 Pesan via WA
               </button>
             </div>
           </div>
-
-          <!-- Produk 3 -->
           <div class="produk-card-main anim delay-2" data-kategori="woody">
-            <div class="produk-thumb f3">🌿</div>
+            <div class="produk-thumb">
+              <img
+                src="images/baju-03.jpg"
+                alt="[Nama Produk 3]"
+                loading="lazy"
+              />
+            </div>
             <div class="produk-info-main">
               <div class="produk-cat">Woody</div>
               <div class="produk-name">[Nama Produk 3]</div>
@@ -464,21 +484,28 @@
                 Kehangatan kayu cedar dan sandalwood yang maskulin dan elegan.
               </div>
               <div class="produk-notes">
-                <span class="produk-note">Cedar</span>
-                <span class="produk-note">Oud</span>
+                <span class="produk-note">Cedar</span
+                ><span class="produk-note">Oud</span>
               </div>
               <div class="produk-price">
-                <span class="price-main">Rp [Harga Jual]</span>
+                <span class="price-main">Rp [Jual]</span>
               </div>
-              <button class="produk-wa" onclick="orderWA('[Nama Produk 3]')">
+              <button
+                class="produk-wa"
+                onclick="orderWA('[Nama Produk 3]', 'Parfum Baju')"
+              >
                 💬 Pesan via WA
               </button>
             </div>
           </div>
-
-          <!-- Produk 4 -->
           <div class="produk-card-main anim delay-3" data-kategori="oriental">
-            <div class="produk-thumb f4">✨</div>
+            <div class="produk-thumb">
+              <img
+                src="images/baju-04.jpg"
+                alt="[Nama Produk 4]"
+                loading="lazy"
+              />
+            </div>
             <div class="produk-info-main">
               <div class="produk-cat">Oriental</div>
               <div class="produk-name">[Nama Produk 4]</div>
@@ -486,22 +513,29 @@
                 Perpaduan rempah eksotis yang hangat dan misterius.
               </div>
               <div class="produk-notes">
-                <span class="produk-note">Vanilla</span>
-                <span class="produk-note">Musk</span>
+                <span class="produk-note">Vanilla</span
+                ><span class="produk-note">Musk</span>
               </div>
               <div class="produk-price">
-                <span class="price-old">Rp [Harga Coret]</span>
-                <span class="price-main">Rp [Harga Jual]</span>
+                <span class="price-old">Rp [Coret]</span
+                ><span class="price-main">Rp [Jual]</span>
               </div>
-              <button class="produk-wa" onclick="orderWA('[Nama Produk 4]')">
+              <button
+                class="produk-wa"
+                onclick="orderWA('[Nama Produk 4]', 'Parfum Baju')"
+              >
                 💬 Pesan via WA
               </button>
             </div>
           </div>
-
-          <!-- Produk 5 -->
           <div class="produk-card-main anim delay-4" data-kategori="fruity">
-            <div class="produk-thumb f5">🍊</div>
+            <div class="produk-thumb">
+              <img
+                src="images/baju-05.jpg"
+                alt="[Nama Produk 5]"
+                loading="lazy"
+              />
+            </div>
             <div class="produk-info-main">
               <div class="produk-cat">Fruity</div>
               <div class="produk-name">[Nama Produk 5]</div>
@@ -509,23 +543,28 @@
                 Semangat buah-buahan tropis yang ceria dan menyegarkan.
               </div>
               <div class="produk-notes">
-                <span class="produk-note">Citrus</span>
-                <span class="produk-note">Peach</span>
+                <span class="produk-note">Citrus</span
+                ><span class="produk-note">Peach</span>
               </div>
               <div class="produk-price">
-                <span class="price-main">Rp [Harga Jual]</span>
+                <span class="price-main">Rp [Jual]</span>
               </div>
-              <button class="produk-wa" onclick="orderWA('[Nama Produk 5]')">
+              <button
+                class="produk-wa"
+                onclick="orderWA('[Nama Produk 5]', 'Parfum Baju')"
+              >
                 💬 Pesan via WA
               </button>
             </div>
           </div>
-
-          <!-- Produk 6 -->
           <div class="produk-card-main anim delay-5" data-kategori="floral">
-            <div class="produk-thumb f6">
-              <span class="produk-badge-hot">🔥 Terlaris</span>
-              🌺
+            <div class="produk-thumb">
+              <span class="badge-hot">🔥 Terlaris</span
+              ><img
+                src="images/baju-06.jpg"
+                alt="[Nama Produk 6]"
+                loading="lazy"
+              />
             </div>
             <div class="produk-info-main">
               <div class="produk-cat">Floral</div>
@@ -534,22 +573,29 @@
                 Kelembutan bunga melati yang manis dan romantis.
               </div>
               <div class="produk-notes">
-                <span class="produk-note">Jasmine</span>
-                <span class="produk-note">Lily</span>
+                <span class="produk-note">Jasmine</span
+                ><span class="produk-note">Lily</span>
               </div>
               <div class="produk-price">
-                <span class="price-old">Rp [Harga Coret]</span>
-                <span class="price-main">Rp [Harga Jual]</span>
+                <span class="price-old">Rp [Coret]</span
+                ><span class="price-main">Rp [Jual]</span>
               </div>
-              <button class="produk-wa" onclick="orderWA('[Nama Produk 6]')">
+              <button
+                class="produk-wa"
+                onclick="orderWA('[Nama Produk 6]', 'Parfum Baju')"
+              >
                 💬 Pesan via WA
               </button>
             </div>
           </div>
-
-          <!-- Produk 7 -->
           <div class="produk-card-main anim" data-kategori="woody">
-            <div class="produk-thumb f2">🍂</div>
+            <div class="produk-thumb">
+              <img
+                src="images/baju-07.jpg"
+                alt="[Nama Produk 7]"
+                loading="lazy"
+              />
+            </div>
             <div class="produk-info-main">
               <div class="produk-cat">Woody</div>
               <div class="produk-name">[Nama Produk 7]</div>
@@ -557,23 +603,28 @@
                 Aroma hutan yang segar dengan sentuhan bumi yang natural.
               </div>
               <div class="produk-notes">
-                <span class="produk-note">Pine</span>
-                <span class="produk-note">Earth</span>
+                <span class="produk-note">Pine</span
+                ><span class="produk-note">Earth</span>
               </div>
               <div class="produk-price">
-                <span class="price-main">Rp [Harga Jual]</span>
+                <span class="price-main">Rp [Jual]</span>
               </div>
-              <button class="produk-wa" onclick="orderWA('[Nama Produk 7]')">
+              <button
+                class="produk-wa"
+                onclick="orderWA('[Nama Produk 7]', 'Parfum Baju')"
+              >
                 💬 Pesan via WA
               </button>
             </div>
           </div>
-
-          <!-- Produk 8 -->
           <div class="produk-card-main anim delay-1" data-kategori="fresh">
-            <div class="produk-thumb f3">
-              <span class="produk-badge-new">✨ Baru</span>
-              🍃
+            <div class="produk-thumb">
+              <span class="badge-new">✨ Baru</span
+              ><img
+                src="images/baju-08.jpg"
+                alt="[Nama Produk 8]"
+                loading="lazy"
+              />
             </div>
             <div class="produk-info-main">
               <div class="produk-cat">Fresh</div>
@@ -582,22 +633,29 @@
                 Napas angin pagi yang bersih dan menenangkan pikiran.
               </div>
               <div class="produk-notes">
-                <span class="produk-note">Green Tea</span>
-                <span class="produk-note">Mint</span>
+                <span class="produk-note">Green Tea</span
+                ><span class="produk-note">Mint</span>
               </div>
               <div class="produk-price">
-                <span class="price-old">Rp [Harga Coret]</span>
-                <span class="price-main">Rp [Harga Jual]</span>
+                <span class="price-old">Rp [Coret]</span
+                ><span class="price-main">Rp [Jual]</span>
               </div>
-              <button class="produk-wa" onclick="orderWA('[Nama Produk 8]')">
+              <button
+                class="produk-wa"
+                onclick="orderWA('[Nama Produk 8]', 'Parfum Baju')"
+              >
                 💬 Pesan via WA
               </button>
             </div>
           </div>
-
-          <!-- Produk 9 -->
           <div class="produk-card-main anim delay-2" data-kategori="oriental">
-            <div class="produk-thumb f4">🕌</div>
+            <div class="produk-thumb">
+              <img
+                src="images/baju-09.jpg"
+                alt="[Nama Produk 9]"
+                loading="lazy"
+              />
+            </div>
             <div class="produk-info-main">
               <div class="produk-cat">Oriental</div>
               <div class="produk-name">[Nama Produk 9]</div>
@@ -605,21 +663,28 @@
                 Kemewahan oud arab yang kuat dan berkesan mendalam.
               </div>
               <div class="produk-notes">
-                <span class="produk-note">Oud</span>
-                <span class="produk-note">Amber</span>
+                <span class="produk-note">Oud</span
+                ><span class="produk-note">Amber</span>
               </div>
               <div class="produk-price">
-                <span class="price-main">Rp [Harga Jual]</span>
+                <span class="price-main">Rp [Jual]</span>
               </div>
-              <button class="produk-wa" onclick="orderWA('[Nama Produk 9]')">
+              <button
+                class="produk-wa"
+                onclick="orderWA('[Nama Produk 9]', 'Parfum Baju')"
+              >
                 💬 Pesan via WA
               </button>
             </div>
           </div>
-
-          <!-- Produk 10 -->
           <div class="produk-card-main anim delay-3" data-kategori="floral">
-            <div class="produk-thumb f1">🌷</div>
+            <div class="produk-thumb">
+              <img
+                src="images/baju-10.jpg"
+                alt="[Nama Produk 10]"
+                loading="lazy"
+              />
+            </div>
             <div class="produk-info-main">
               <div class="produk-cat">Floral</div>
               <div class="produk-name">[Nama Produk 10]</div>
@@ -627,22 +692,29 @@
                 Keanggunan bunga tulip yang lembut dan feminim.
               </div>
               <div class="produk-notes">
-                <span class="produk-note">Tulip</span>
-                <span class="produk-note">Powder</span>
+                <span class="produk-note">Tulip</span
+                ><span class="produk-note">Powder</span>
               </div>
               <div class="produk-price">
-                <span class="price-old">Rp [Harga Coret]</span>
-                <span class="price-main">Rp [Harga Jual]</span>
+                <span class="price-old">Rp [Coret]</span
+                ><span class="price-main">Rp [Jual]</span>
               </div>
-              <button class="produk-wa" onclick="orderWA('[Nama Produk 10]')">
+              <button
+                class="produk-wa"
+                onclick="orderWA('[Nama Produk 10]', 'Parfum Baju')"
+              >
                 💬 Pesan via WA
               </button>
             </div>
           </div>
-
-          <!-- Produk 11 -->
           <div class="produk-card-main anim delay-4" data-kategori="fruity">
-            <div class="produk-thumb f5">🍋</div>
+            <div class="produk-thumb">
+              <img
+                src="images/baju-11.jpg"
+                alt="[Nama Produk 11]"
+                loading="lazy"
+              />
+            </div>
             <div class="produk-info-main">
               <div class="produk-cat">Fruity</div>
               <div class="produk-name">[Nama Produk 11]</div>
@@ -650,21 +722,28 @@
                 Citrus lemon yang menyegarkan dan penuh semangat.
               </div>
               <div class="produk-notes">
-                <span class="produk-note">Lemon</span>
-                <span class="produk-note">Bergamot</span>
+                <span class="produk-note">Lemon</span
+                ><span class="produk-note">Bergamot</span>
               </div>
               <div class="produk-price">
-                <span class="price-main">Rp [Harga Jual]</span>
+                <span class="price-main">Rp [Jual]</span>
               </div>
-              <button class="produk-wa" onclick="orderWA('[Nama Produk 11]')">
+              <button
+                class="produk-wa"
+                onclick="orderWA('[Nama Produk 11]', 'Parfum Baju')"
+              >
                 💬 Pesan via WA
               </button>
             </div>
           </div>
-
-          <!-- Produk 12 -->
           <div class="produk-card-main anim delay-5" data-kategori="woody">
-            <div class="produk-thumb f6">🪵</div>
+            <div class="produk-thumb">
+              <img
+                src="images/baju-12.jpg"
+                alt="[Nama Produk 12]"
+                loading="lazy"
+              />
+            </div>
             <div class="produk-info-main">
               <div class="produk-cat">Woody</div>
               <div class="produk-name">[Nama Produk 12]</div>
@@ -672,21 +751,22 @@
                 Sandalwood creamy yang hangat dan sophisticated.
               </div>
               <div class="produk-notes">
-                <span class="produk-note">Sandalwood</span>
-                <span class="produk-note">Musk</span>
+                <span class="produk-note">Sandalwood</span
+                ><span class="produk-note">Musk</span>
               </div>
               <div class="produk-price">
-                <span class="price-old">Rp [Harga Coret]</span>
-                <span class="price-main">Rp [Harga Jual]</span>
+                <span class="price-old">Rp [Coret]</span
+                ><span class="price-main">Rp [Jual]</span>
               </div>
-              <button class="produk-wa" onclick="orderWA('[Nama Produk 12]')">
+              <button
+                class="produk-wa"
+                onclick="orderWA('[Nama Produk 12]', 'Parfum Baju')"
+              >
                 💬 Pesan via WA
               </button>
             </div>
           </div>
         </div>
-
-        <!-- CTA Bottom -->
         <div class="cta-bottom anim">
           <h3>Tidak menemukan aroma yang Anda cari?</h3>
           <p>
@@ -694,7 +774,7 @@
             parfum yang tepat.
           </p>
           <a
-            href="https://wa.me/628123456789?text=Halo%20Mekar%20Wangi%2C%20saya%20mau%20tanya%20parfum%20baju"
+            href="https://wa.me/62895605854799?text=Halo%20Mekar%20Wangi%2C%20saya%20mau%20konsultasi%20parfum%20baju"
             class="btn btn-dark"
             target="_blank"
             >💬 Konsultasi via WhatsApp</a
@@ -703,14 +783,13 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-grid">
         <div>
           <div class="footer-logo">Mekar <span>Wangi</span> Indonesia</div>
           <p class="footer-desc">
-            Menghadirkan parfum baju dan parfum laundry berkualitas premium
-            dengan harga terjangkau.
+            Parfum baju dan parfum laundry berkualitas premium dengan harga
+            terjangkau.
           </p>
         </div>
         <div class="footer-col">
@@ -719,12 +798,11 @@
             <li><a href="index.html">Beranda</a></li>
             <li><a href="parfum-baju.html">Parfum Baju</a></li>
             <li><a href="parfum-laundry.html">Parfum Laundry</a></li>
-            <li><a href="index.html#cara-pesan">Cara Pesan</a></li>
             <li><a href="index.html#cabang">Cabang</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Kategori Baju</h4>
+          <h4>Kategori</h4>
           <ul>
             <li><a href="#">Floral</a></li>
             <li><a href="#">Woody</a></li>
@@ -737,11 +815,13 @@
           <h4>Kontak</h4>
           <ul>
             <li>
-              <a href="https://wa.me/628123456789"
-                >WhatsApp: +62 812-XXXX-XXXX</a
+              <a href="https://wa.me/62895605854799">WA: +62 895-6058-54799</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/mekarwangi_official58/"
+                >IG: @mekarwangi_official58</a
               >
             </li>
-            <li><a href="#">Instagram: @mekwangiindonesia</a></li>
           </ul>
         </div>
       </div>
@@ -753,62 +833,7 @@
       </div>
     </footer>
 
-    <a href="https://wa.me/628123456789" class="float-wa" target="_blank">💬</a>
-
-    <script>
-      window.addEventListener("scroll", () => {
-        document
-          .getElementById("navbar")
-          .classList.toggle("scrolled", window.scrollY > 30);
-      });
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) e.target.classList.add("visible");
-          });
-        },
-        { threshold: 0.1 },
-      );
-      document.querySelectorAll(".anim").forEach((el) => observer.observe(el));
-
-      function filterProduk(kategori, btn) {
-        document
-          .querySelectorAll(".filter-btn")
-          .forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-        const cards = document.querySelectorAll(".produk-card-main");
-        let count = 0;
-        cards.forEach((card) => {
-          const match =
-            kategori === "semua" || card.dataset.kategori === kategori;
-          card.style.display = match ? "block" : "none";
-          if (match) count++;
-        });
-        document.getElementById("produk-count").innerHTML =
-          `Menampilkan <strong>${count}</strong> produk${kategori !== "semua" ? " — " + kategori : " unggulan"}`;
-      }
-
-      function orderWA(nama) {
-        window.open(
-          `https://wa.me/628123456789?text=Halo%20Mekar%20Wangi%2C%20saya%20mau%20pesan%20Parfum%20Baju%3A%20${encodeURIComponent(nama)}`,
-          "_blank",
-        );
-      }
-
-      function toggleMenu() {
-        const links = document.querySelector(".nav-links");
-        links.style.display = links.style.display === "flex" ? "none" : "flex";
-        links.style.flexDirection = "column";
-        links.style.position = "absolute";
-        links.style.top = "64px";
-        links.style.left = "0";
-        links.style.right = "0";
-        links.style.background = "var(--white)";
-        links.style.padding = "1rem 5%";
-        links.style.borderBottom = "1px solid var(--border)";
-        links.style.boxShadow = "var(--shadow-md)";
-      }
-    </script>
+    <script src="js/promo.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

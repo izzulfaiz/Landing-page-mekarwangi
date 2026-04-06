@@ -3,16 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ═══ SEO META TAGS ═══ -->
+    <title>Mekar Wangi Indonesia – Parfum Baju & Laundry Premium</title>
     <meta
       name="description"
-      content="Mekar Wangi Indonesia – Toko parfum baju dan parfum laundry premium. Tersedia di 8 cabang. Wangi tahan lama, harga terjangkau."
+      content="Mekar Wangi Indonesia – Toko parfum baju dan parfum laundry premium. Aroma tahan lama, harga terjangkau. Tersedia di 8 cabang di Kabupaten [Nama Kabupaten]."
     />
     <meta
       name="keywords"
-      content="parfum baju, parfum laundry, pewangi pakaian, toko parfum, Mekar Wangi Indonesia"
+      content="parfum baju, parfum laundry, pewangi pakaian, toko parfum, Mekar Wangi Indonesia, parfum murah, pewangi cucian"
     />
-    <title>Mekar Wangi Indonesia – Parfum Baju & Laundry Premium</title>
+    <meta name="author" content="Mekar Wangi Indonesia" />
+    <link rel="canonical" href="https://www.mekwangiindonesia.com/" />
+
+    <!-- ═══ OPEN GRAPH — untuk preview link di WhatsApp, Facebook, dll ═══ -->
+    <!-- CARA EDIT: Ganti URL gambar di bawah dengan foto produk/toko Anda yang sudah diupload -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mekar Wangi Indonesia" />
+    <meta
+      property="og:title"
+      content="Mekar Wangi Indonesia – Parfum Baju & Laundry Premium"
+    />
+    <meta
+      property="og:description"
+      content="Toko parfum baju dan parfum laundry berkualitas premium. Aroma tahan lama, harga bersahabat. Tersedia di 8 cabang!"
+    />
+    <meta
+      property="og:image"
+      content="https://www.mekwangiindonesia.com/images/og-image.jpg"
+    />
+    <!-- ↑ GANTI: upload foto ke folder images/ lalu sesuaikan nama filenya -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://www.mekwangiindonesia.com/" />
+    <meta property="og:locale" content="id_ID" />
+
+    <!-- ═══ TWITTER CARD ═══ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Mekar Wangi Indonesia – Parfum Baju & Laundry Premium"
+    />
+    <meta
+      name="twitter:description"
+      content="Toko parfum baju dan parfum laundry berkualitas premium. Tersedia di 8 cabang!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.mekwangiindonesia.com/images/og-image.jpg"
+    />
+
+    <!-- ═══ STYLESHEET ═══ -->
     <link rel="stylesheet" href="css/style.css" />
+
     <style>
       /* ── HERO ── */
       #hero {
@@ -177,7 +221,7 @@
         color: var(--muted);
       }
 
-      /* ── WHY US ── */
+      /* ── KEUNGGULAN ── */
       #keunggulan {
         padding: 6rem 5%;
         background: var(--cream);
@@ -242,17 +286,15 @@
         color: var(--mid);
       }
 
-      /* ── KATEGORI PRODUK ── */
+      /* ── PRODUK KATEGORI ── */
       #produk {
         padding: 6rem 5%;
-      }
-      .produk-header {
-        margin-bottom: 3.5rem;
       }
       .kategori-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
+        margin-top: 3.5rem;
       }
       .kategori-card {
         border-radius: var(--radius-xl);
@@ -268,17 +310,18 @@
       }
       .kategori-bg {
         height: 260px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 5rem;
-        position: relative;
+        overflow: hidden;
       }
-      .kategori-bg.biru {
-        background: linear-gradient(135deg, var(--blue-pale), var(--blue-soft));
+      .kategori-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.4s ease;
       }
-      .kategori-bg.pink {
-        background: linear-gradient(135deg, var(--pink-pale), var(--pink-soft));
+      .kategori-card:hover .kategori-bg img {
+        transform: scale(1.05);
       }
       .kategori-body {
         padding: 1.8rem 2rem;
@@ -386,7 +429,6 @@
       .cara-step-num {
         font-family: var(--ff-display);
         font-size: 3rem;
-        font-weight: 400;
         color: rgba(255, 255, 255, 0.08);
         position: absolute;
         top: 1rem;
@@ -554,42 +596,38 @@
         overflow: hidden;
         cursor: pointer;
         transition: var(--transition);
-        position: relative;
       }
       .galeri-item:hover {
         transform: scale(1.02);
         box-shadow: var(--shadow-md);
       }
-      .galeri-placeholder {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        border-radius: var(--radius-md);
+      .galeri-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+      .galeri-item:hover img {
+        transform: scale(1.05);
       }
       .gal-1 {
         height: 200px;
-        background: linear-gradient(135deg, var(--blue-pale), var(--blue-soft));
       }
       .gal-2 {
         height: 140px;
-        background: linear-gradient(135deg, var(--pink-pale), var(--pink-soft));
       }
       .gal-3 {
         height: 180px;
-        background: linear-gradient(135deg, var(--blue-soft), var(--pink-soft));
       }
       .gal-4 {
         height: 160px;
-        background: linear-gradient(135deg, var(--pink-pale), var(--blue-pale));
       }
       .gal-5 {
         height: 220px;
-        background: linear-gradient(135deg, var(--blue-pale), var(--blue-soft));
       }
       .gal-6 {
         height: 150px;
-        background: linear-gradient(135deg, var(--pink-soft), var(--pink-pale));
       }
       .galeri-note {
         text-align: center;
@@ -624,7 +662,6 @@
         font-family: var(--ff-display);
         font-size: 0.85rem;
         color: var(--blue);
-        font-weight: 400;
         margin-bottom: 0.8rem;
         display: flex;
         align-items: center;
@@ -709,7 +746,7 @@
     </style>
   </head>
   <body>
-    <!-- ═══ NAVBAR ═══ -->
+    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
       <a href="index.html" class="nav-logo"
         >Mekar <span>Wangi</span> Indonesia</a
@@ -723,7 +760,7 @@
       </ul>
       <div class="nav-cta">
         <a
-          href="https://wa.me/628123456789"
+          href="https://wa.me/6285738894427"
           class="btn btn-pink"
           target="_blank"
           >💬 Order WA</a
@@ -734,7 +771,7 @@
       </div>
     </nav>
 
-    <!-- ═══ HERO ═══ -->
+    <!-- HERO -->
     <section id="hero">
       <div class="hero-blob1"></div>
       <div class="hero-blob2"></div>
@@ -763,14 +800,13 @@
             <p>Parfum Laundry</p>
           </div>
           <div class="hero-pill">
-            <strong>8</strong>
-            <span>Cabang Tersebar</span>
+            <strong>8</strong><span>Cabang Tersebar</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ KEUNGGULAN ═══ -->
+    <!-- KEUNGGULAN -->
     <section id="keunggulan">
       <div class="container">
         <div class="section-eyebrow anim">Mengapa Kami</div>
@@ -826,7 +862,7 @@
             <div class="kgl-icon pink">⭐</div>
             <h3>500+ Pelanggan Puas</h3>
             <p>
-              Ribuan pelanggan sudah mempercayakan kebutuhan parfum mereka
+              Ratusan pelanggan sudah mempercayakan kebutuhan parfum mereka
               kepada kami.
             </p>
           </div>
@@ -834,22 +870,27 @@
       </div>
     </section>
 
-    <!-- ═══ PRODUK ═══ -->
+    <!-- PRODUK -->
     <section id="produk">
       <div class="container">
-        <div class="produk-header">
-          <div class="section-eyebrow anim">Koleksi Kami</div>
-          <h2 class="section-title anim delay-1">
-            Pilih <em>Kategori</em> Parfum
-          </h2>
-          <p class="section-desc anim delay-2">
-            Kami memiliki dua kategori utama produk — pilih sesuai kebutuhan
-            Anda dan temukan koleksi lengkapnya.
-          </p>
-        </div>
+        <div class="section-eyebrow anim">Koleksi Kami</div>
+        <h2 class="section-title anim delay-1">
+          Pilih <em>Kategori</em> Parfum
+        </h2>
+        <p class="section-desc anim delay-2">
+          Kami memiliki dua kategori utama produk — pilih sesuai kebutuhan Anda
+          dan temukan koleksi lengkapnya.
+        </p>
         <div class="kategori-grid">
           <a href="parfum-baju.html" class="kategori-card anim delay-1">
-            <div class="kategori-bg biru">🌸</div>
+            <div class="kategori-bg">
+              <!-- GANTI: ganti nama file sesuai foto Anda di folder images/ -->
+              <img
+                src="images/kategori-parfum-baju.jpeg"
+                alt="Parfum Baju Mekar Wangi Indonesia"
+                loading="lazy"
+              />
+            </div>
             <div class="kategori-body">
               <div class="tag tag-blue" style="margin-bottom: 0.8rem">
                 Parfum Baju
@@ -867,15 +908,22 @@
             </div>
           </a>
           <a href="parfum-laundry.html" class="kategori-card anim delay-2">
-            <div class="kategori-bg pink">🫧</div>
+            <div class="kategori-bg">
+              <!-- GANTI: ganti nama file sesuai foto Anda di folder images/ -->
+              <img
+                src="images/kategori-parfum-laundry.jpeg"
+                alt="Parfum Laundry Mekar Wangi Indonesia"
+                loading="lazy"
+              />
+            </div>
             <div class="kategori-body">
               <div class="tag tag-pink" style="margin-bottom: 0.8rem">
                 Parfum Laundry
               </div>
               <h3>Parfum Laundry</h3>
               <p>
-                Pewangi pakaian cucian yang membuat baju Anda harum segar setiap
-                saat. Aman untuk semua jenis kain.
+                Pewangi pakaian cucian berkualitas tinggi yang membuat baju Anda
+                harum segar tahan lama. Aman untuk semua jenis kain.
               </p>
               <div class="kategori-preview">
                 <span>Soft Clean</span><span>Ocean</span><span>Lavender</span
@@ -888,7 +936,7 @@
       </div>
     </section>
 
-    <!-- ═══ CARA PESAN ═══ -->
+    <!-- CARA PESAN -->
     <section id="cara-pesan">
       <div class="container">
         <div class="section-eyebrow anim">Mudah & Cepat</div>
@@ -910,8 +958,8 @@
             <div class="cara-step-icon">🔍</div>
             <h4>Pilih Produk</h4>
             <p>
-              Lihat katalog produk kami di website atau Instagram. Tentukan
-              produk yang Anda inginkan.
+              Lihat katalog di website atau Instagram kami dan tentukan produk
+              yang diinginkan.
             </p>
           </div>
           <div class="cara-step">
@@ -919,7 +967,7 @@
             <div class="cara-step-icon">💬</div>
             <h4>Chat WhatsApp</h4>
             <p>
-              Hubungi kami via WhatsApp, sebutkan produk dan jumlah yang
+              Hubungi kami via WhatsApp, sebutkan nama produk dan jumlah yang
               diinginkan.
             </p>
           </div>
@@ -948,8 +996,8 @@
             <div class="cara-step-icon">📍</div>
             <h4>Temukan Cabang Terdekat</h4>
             <p>
-              Cek daftar cabang kami di bagian bawah halaman ini dan pilih yang
-              paling dekat dari lokasi Anda.
+              Cek daftar 8 cabang kami di bawah dan pilih yang paling dekat dari
+              Anda.
             </p>
           </div>
           <div class="cara-step">
@@ -957,8 +1005,8 @@
             <div class="cara-step-icon">🚗</div>
             <h4>Kunjungi Toko</h4>
             <p>
-              Datang langsung ke toko kami. Kami buka Senin–Sabtu pukul
-              08.00–20.00 WIB.
+              Datang langsung ke toko kami. Buka Senin–Sabtu pukul 08.00–20.00
+              WIB.
             </p>
           </div>
           <div class="cara-step">
@@ -966,7 +1014,7 @@
             <div class="cara-step-icon">👃</div>
             <h4>Coba & Pilih</h4>
             <p>
-              Rasakan langsung aroma produk kami. Tim kami siap membantu Anda
+              Rasakan langsung aroma produk kami. Tim kami siap membantu
               menemukan parfum yang tepat.
             </p>
           </div>
@@ -975,15 +1023,15 @@
             <div class="cara-step-icon">🛍️</div>
             <h4>Bayar & Bawa Pulang</h4>
             <p>
-              Bayar di kasir dan bawa pulang produk pilihan Anda. Terima kasih
-              sudah berkunjung!
+              Bayar di kasir dan bawa pulang. Beli di atas Rp 50.000? Ada bonus
+              parfum 12ml pilihan!
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ TESTIMONI ═══ -->
+    <!-- TESTIMONI -->
     <section id="testimoni">
       <div class="container">
         <div class="section-eyebrow anim">Ulasan Pelanggan</div>
@@ -999,43 +1047,40 @@
             <div class="testi-stars">★★★★★</div>
             <blockquote>
               "Parfum bajunya wangi banget dan tahan lama! Dari pagi sampai
-              malam masih tercium. Harganya juga sangat worth it, sudah jadi
-              langganan tetap saya."
+              malam masih tercium. Harganya juga sangat worth it."
             </blockquote>
             <div class="testi-user">
               <div class="testi-avatar av-pink">👩</div>
               <div>
-                <strong>Siti Rahayu</strong>
-                <span>Pelanggan Setia, Cabang [Nama Kecamatan]</span>
+                <strong>Siti Rahayu</strong
+                ><span>Pelanggan Setia, MWI Merakurak</span>
               </div>
             </div>
           </div>
           <div class="testi-card anim delay-2">
             <div class="testi-stars">★★★★★</div>
             <blockquote>
-              "Parfum laundry-nya beda banget dari yang lain, lebih tahan lama
-              dan tidak menyengat. Cocok banget untuk pakaian anak-anak saya."
+              "Parfum laundry nya beda banget dari yang lain, lebih tahan lama
+              dan tidak menyengat. Cocok banget untuk pakaian anak-anak."
             </blockquote>
             <div class="testi-user">
               <div class="testi-avatar av-blue">👩‍👦</div>
               <div>
-                <strong>Dewi Lestari</strong>
-                <span>Ibu Rumah Tangga, [Nama Kota]</span>
+                <strong>Dewi Lestari</strong
+                ><span>Ibu Rumah Tangga</span>
               </div>
             </div>
           </div>
           <div class="testi-card anim delay-3">
             <div class="testi-stars">★★★★★</div>
             <blockquote>
-              "Saya beli untuk dijual kembali di warung. Pelanggan saya suka
-              banget, sudah repeat order berkali-kali. Harga grosir juga
-              bersahabat!"
+              "Saya beli untuk dijual kembali, pelanggan saya suka banget! Sudah
+              repeat order berkali-kali. Harga grosir juga bersahabat!"
             </blockquote>
             <div class="testi-user">
               <div class="testi-avatar av-mix">🧑‍💼</div>
               <div>
-                <strong>Budi Hartono</strong>
-                <span>Reseller, [Nama Kota]</span>
+                <strong>Budi Hartono</strong><span>Reseller</span>
               </div>
             </div>
           </div>
@@ -1043,22 +1088,11 @@
       </div>
     </section>
 
-    <!-- ═══ FAQ ═══ -->
+    <!-- FAQ -->
     <section id="faq">
       <div class="container">
         <div style="text-align: center; margin-bottom: 3rem">
-          <div
-            class="section-eyebrow anim"
-            style="justify-content: center; gap: 0.7rem"
-          >
-            <span
-              style="
-                width: 28px;
-                height: 1.5px;
-                background: var(--blue);
-                display: inline-block;
-              "
-            ></span>
+          <div class="section-eyebrow anim" style="justify-content: center">
             Pertanyaan Umum
           </div>
           <h2 class="section-title anim delay-1">FAQ</h2>
@@ -1074,8 +1108,7 @@
             </button>
             <div class="faq-a">
               Ya, semua produk kami adalah original dan telah melalui proses
-              seleksi kualitas yang ketat. Kami berkomitmen untuk hanya menjual
-              produk yang aman dan berkualitas tinggi untuk pelanggan kami.
+              seleksi kualitas yang ketat.
             </div>
           </div>
           <div class="faq-item anim delay-1">
@@ -1084,20 +1117,17 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-a">
-              Tidak ada minimum order untuk pembelian eceran. Untuk pembelian
-              grosir atau reseller, silakan hubungi kami via WhatsApp untuk
-              informasi lebih lanjut mengenai harga dan syaratnya.
+              Tidak ada minimum order untuk pembelian eceran. Untuk
+              grosir/reseller, hubungi kami via WhatsApp.
             </div>
           </div>
           <div class="faq-item anim delay-2">
             <button class="faq-q" onclick="toggleFaq(this)">
-              Apakah bisa kirim ke luar kota?
-              <span class="faq-icon">+</span>
+              Apakah bisa kirim ke luar kota? <span class="faq-icon">+</span>
             </button>
             <div class="faq-a">
               Ya, kami melayani pengiriman ke seluruh Indonesia melalui jasa
-              ekspedisi pilihan. Biaya pengiriman ditanggung pembeli dan akan
-              dikonfirmasi saat proses pemesanan.
+              ekspedisi pilihan.
             </div>
           </div>
           <div class="faq-item anim delay-3">
@@ -1107,8 +1137,7 @@
             </button>
             <div class="faq-a">
               Ya, parfum laundry kami diformulasikan khusus agar aman untuk
-              berbagai jenis kain termasuk kain sensitif seperti sutera dan wol.
-              Tidak meninggalkan noda dan tidak merusak warna pakaian.
+              berbagai jenis kain termasuk sutera dan wol.
             </div>
           </div>
           <div class="faq-item anim delay-4">
@@ -1117,10 +1146,8 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-a">
-              Kami membuka kesempatan kerjasama reseller! Hubungi kami via
-              WhatsApp dengan menyebutkan minat Anda sebagai reseller. Tim kami
-              akan menjelaskan sistem, harga, dan keuntungan yang bisa Anda
-              dapatkan.
+              Hubungi kami via WhatsApp dengan menyebut minat sebagai reseller.
+              Tim kami akan menjelaskan sistem dan keuntungannya.
             </div>
           </div>
           <div class="faq-item anim delay-5">
@@ -1129,16 +1156,15 @@
               <span class="faq-icon">+</span>
             </button>
             <div class="faq-a">
-              Kami menerima pembayaran tunai (untuk pembelian langsung di toko),
-              transfer bank, dan dompet digital seperti GoPay, OVO, dan Dana.
-              COD tersedia untuk area tertentu.
+              Tunai (di toko), transfer bank, dan dompet digital (GoPay, OVO,
+              Dana). COD tersedia untuk area tertentu.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ GALERI ═══ -->
+    <!-- GALERI -->
     <section id="galeri">
       <div class="container">
         <div class="section-eyebrow anim">Galeri</div>
@@ -1147,33 +1173,57 @@
           Sekilas tampilan produk dan suasana toko Mekar Wangi Indonesia.
         </p>
         <div class="galeri-grid anim delay-3">
-          <div class="galeri-item">
-            <div class="galeri-placeholder gal-1">🌸</div>
+          <div class="galeri-item gal-1">
+            <img
+              src="images/galeri-1.jpeg"
+              alt="Galeri Mekar Wangi"
+              loading="lazy"
+            />
           </div>
-          <div class="galeri-item">
-            <div class="galeri-placeholder gal-2">🫧</div>
+          <div class="galeri-item gal-2">
+            <img
+              src="images/galeri-2.jpeg"
+              alt="Galeri Mekar Wangi"
+              loading="lazy"
+            />
           </div>
-          <div class="galeri-item">
-            <div class="galeri-placeholder gal-3">✨</div>
+          <div class="galeri-item gal-3">
+            <img
+              src="images/galeri-3.jpeg"
+              alt="Galeri Mekar Wangi"
+              loading="lazy"
+            />
           </div>
-          <div class="galeri-item">
-            <div class="galeri-placeholder gal-4">🌺</div>
+          <div class="galeri-item gal-4">
+            <img
+              src="images/galeri-4.jpeg"
+              alt="Galeri Mekar Wangi"
+              loading="lazy"
+            />
           </div>
-          <div class="galeri-item">
-            <div class="galeri-placeholder gal-5">🌿</div>
+          <div class="galeri-item gal-5">
+            <img
+              src="images/galeri-5.jpeg"
+              alt="Galeri Mekar Wangi"
+              loading="lazy"
+            />
           </div>
-          <div class="galeri-item">
-            <div class="galeri-placeholder gal-6">💫</div>
+          <div class="galeri-item gal-6">
+            <img
+              src="images/galeri-6.jpeg"
+              alt="Galeri Mekar Wangi"
+              loading="lazy"
+            />
           </div>
-        </div>
+        <!-- </div>
         <p class="galeri-note anim">
-          📸 Ganti placeholder di atas dengan foto produk dan toko Anda yang
-          sebenarnya
+          📸 Ganti file di folder <code>images/</code> dengan nama:
+          galeri-1.jpg, galeri-2.jpg, ... galeri-6.jpg
         </p>
-      </div>
+      </div> -->
     </section>
 
-    <!-- ═══ CABANG ═══ -->
+    <!-- CABANG -->
     <section id="cabang">
       <div class="container">
         <div class="section-eyebrow anim">Lokasi</div>
@@ -1181,207 +1231,177 @@
           Temukan <em>Cabang</em> Terdekat
         </h2>
         <p class="section-desc anim delay-2">
-          Kami hadir di 8 kecamatan di Kabupaten [Nama Kabupaten]. Kunjungi kami
-          hari ini!
+          Kami hadir di berbagai kecamatan di Kabupaten Tuban dan Bojonegoro.
+          Kunjungi kami hari ini!
         </p>
         <div class="cabang-grid">
-          <!-- Cabang 1 -->
           <div class="cabang-card anim delay-1">
             <div class="cabang-num">Cabang 01</div>
-            <h4>Cabang [Nama Kecamatan 1]</h4>
+            <h4>Mekar Wangi Indonesia</h4>
             <address>
-              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
-              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+              Jl. Pemuda No.25<br />Kec. Tuban, Kab. Tuban<br />Buka: Setiap
+              Hari, 08.00–21.00 WIB
             </address>
             <div class="cabang-actions">
               <button
                 class="cabang-btn"
-                onclick="
-                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_1')
-                "
+                onclick="window.open('https://maps.app.goo.gl/BYQp2A12GJ74Dg3J9?g_st=aw')"
               >
-                📍 Google Maps
-              </button>
-              <button
+                📍 Maps</button
+              ><button
                 class="cabang-btn wa"
-                onclick="window.open('https://wa.me/628123456789')"
+                onclick="window.open('https://wa.me/6285738894427')"
               >
-                💬 WhatsApp
+                💬 WA
               </button>
             </div>
           </div>
-          <!-- Cabang 2 -->
           <div class="cabang-card anim delay-2">
             <div class="cabang-num">Cabang 02</div>
-            <h4>Cabang [Nama Kecamatan 2]</h4>
+            <h4>MWI Palang</h4>
             <address>
-              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
-              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+              Jl. Raya Daendles, RT.01 RW.02<br />Kec. Palang, Kab. Tuban<br />Buka: Setiap
+              Hari, 08.00–21.00 WIB
             </address>
             <div class="cabang-actions">
               <button
                 class="cabang-btn"
-                onclick="
-                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_2')
-                "
+                onclick="window.open('https://maps.app.goo.gl/LyUUJzrJ6nDyxxki7?g_st=aw')"
               >
-                📍 Google Maps
-              </button>
-              <button
+                📍 Maps</button
+              ><button
                 class="cabang-btn wa"
-                onclick="window.open('https://wa.me/628123456789')"
+                onclick="window.open('https://wa.me/6285738894427')"
               >
-                💬 WhatsApp
+                💬 WA
               </button>
             </div>
           </div>
-          <!-- Cabang 3 -->
           <div class="cabang-card anim delay-3">
             <div class="cabang-num">Cabang 03</div>
-            <h4>Cabang [Nama Kecamatan 3]</h4>
+            <h4>MWI Merakurak</h4>
             <address>
-              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
-              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+              Jl. Merakurak - Montong (Selatan Masjid Husnul Khotimah)<br />Kec.
+              Merakurak, Kab. Tuban<br />Buka: Setiap Hari, 08.00–21.00 WIB
             </address>
             <div class="cabang-actions">
               <button
                 class="cabang-btn"
-                onclick="
-                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_3')
-                "
+                onclick="window.open('https://maps.app.goo.gl/YKcUuo8dj2esEuTB7?g_st=aw')"
               >
-                📍 Google Maps
-              </button>
-              <button
+                📍 Maps</button
+              ><button
                 class="cabang-btn wa"
-                onclick="window.open('https://wa.me/628123456789')"
+                onclick="window.open('https://wa.me/6285738894427')"
               >
-                💬 WhatsApp
+                💬 WA
               </button>
             </div>
           </div>
-          <!-- Cabang 4 -->
           <div class="cabang-card anim delay-4">
             <div class="cabang-num">Cabang 04</div>
-            <h4>Cabang [Nama Kecamatan 4]</h4>
+            <h4>MWI Glodog</h4>
             <address>
-              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
-              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+              Jl. Raya Daendles (Depan Gapura Glodog)<br />Kec. Palang, Kab. Tuban<br />Buka: Setiap
+              Hari, 08.00–21.00 WIB
             </address>
             <div class="cabang-actions">
               <button
                 class="cabang-btn"
-                onclick="
-                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_4')
-                "
+                onclick="window.open('https://maps.app.goo.gl/pjAQqqLtR38WsxiM8?g_st=aw')"
               >
-                📍 Google Maps
-              </button>
-              <button
+                📍 Maps</button
+              ><button
                 class="cabang-btn wa"
-                onclick="window.open('https://wa.me/628123456789')"
+                onclick="window.open('https://wa.me/6285738894427')"
               >
-                💬 WhatsApp
+                💬 WA
               </button>
             </div>
           </div>
-          <!-- Cabang 5 -->
           <div class="cabang-card anim delay-5">
             <div class="cabang-num">Cabang 05</div>
-            <h4>Cabang [Nama Kecamatan 5]</h4>
+            <h4>MWI Grabagan</h4>
             <address>
-              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
-              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+              <address>
+              Jl. Grabagan (Depan Kantor Kecamatan Grabagan)<br />Kec. Grabagan,
+              Kab. Tuban<br />Buka: Setiap Hari, 08.00–21.00 WIB
+            </address>
             </address>
             <div class="cabang-actions">
               <button
                 class="cabang-btn"
-                onclick="
-                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_5')
-                "
+                onclick="window.open('https://maps.app.goo.gl/nmqJeZGAMhKJPj6w6?g_st=aw')"
               >
-                📍 Google Maps
-              </button>
-              <button
+                📍 Maps</button
+              ><button
                 class="cabang-btn wa"
-                onclick="window.open('https://wa.me/628123456789')"
+                onclick="window.open('https://wa.me/6285738894427')"
               >
-                💬 WhatsApp
+                💬 WA
               </button>
             </div>
           </div>
-          <!-- Cabang 6 -->
           <div class="cabang-card anim">
             <div class="cabang-num">Cabang 06</div>
-            <h4>Cabang [Nama Kecamatan 6]</h4>
+            <h4>MWI Soko</h4>
             <address>
-              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
-              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+              Jl. Raya Soko - Rengel<br />Kec. Soko, Kab. Tuban<br />Buka: Setiap
+              Hari, 08.00–21.00 WIB
             </address>
             <div class="cabang-actions">
               <button
                 class="cabang-btn"
-                onclick="
-                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_6')
-                "
+                onclick="window.open('https://maps.app.goo.gl/jWsf47yk1s4d5ZLK7?g_st=aw')"
               >
-                📍 Google Maps
-              </button>
-              <button
+                📍 Maps</button
+              ><button
                 class="cabang-btn wa"
-                onclick="window.open('https://wa.me/628123456789')"
+                onclick="window.open('https://wa.me/6285738894427')"
               >
-                💬 WhatsApp
+                💬 WA
               </button>
             </div>
           </div>
-          <!-- Cabang 7 -->
           <div class="cabang-card anim delay-1">
             <div class="cabang-num">Cabang 07</div>
-            <h4>Cabang [Nama Kecamatan 7]</h4>
+            <h4>MWI Kanor</h4>
             <address>
-              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
-              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+            Jl. Raya Kanor - Bojonegoro<br />Kec. Kanor, Kab. Bojonegoro<br />Buka: Setiap
+                  Hari, 08.00–21.00 WIB
             </address>
             <div class="cabang-actions">
               <button
                 class="cabang-btn"
-                onclick="
-                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_7')
-                "
+                onclick="window.open('https://maps.app.goo.gl/hVhsqRZX1wdJVpfJ6?g_st=aw')"
               >
-                📍 Google Maps
-              </button>
-              <button
+                📍 Maps</button
+              ><button
                 class="cabang-btn wa"
-                onclick="window.open('https://wa.me/628123456789')"
+                onclick="window.open('https://wa.me/6285738894427')"
               >
-                💬 WhatsApp
+                💬 WA
               </button>
             </div>
           </div>
-          <!-- Cabang 8 -->
           <div class="cabang-card anim delay-2">
             <div class="cabang-num">Cabang 08</div>
-            <h4>Cabang [Nama Kecamatan 8]</h4>
+            <h4>MWI Bravo</h4>
             <address>
-              Jl. [Nama Jalan No. XX]<br />Kec. [Nama Kecamatan], Kab. [Nama
-              Kabupaten]<br />Buka: Senin–Sabtu, 08.00–20.00 WIB
+              Jl. Hayam Wuruk (Bravo Baru)<br />Kec. Semanding, Kab. Tuban<br />Buka:
+              Setiap Hari, 08.00–21.00 WIB
             </address>
             <div class="cabang-actions">
               <button
                 class="cabang-btn"
-                onclick="
-                  window.open('https://maps.google.com/?q=KOORDINAT_CABANG_8')
-                "
+                onclick="window.open('https://maps.app.goo.gl/obqXHfcHLqKeqEb4A?g_st=aw')"
               >
-                📍 Google Maps
-              </button>
-              <button
+                📍 Maps</button
+              ><button
                 class="cabang-btn wa"
-                onclick="window.open('https://wa.me/628123456789')"
+                onclick="window.open('https://wa.me/6285738894427')"
               >
-                💬 WhatsApp
+                💬 WA
               </button>
             </div>
           </div>
@@ -1389,14 +1409,14 @@
       </div>
     </section>
 
-    <!-- ═══ FOOTER ═══ -->
+    <!-- FOOTER -->
     <footer class="footer" id="kontak">
       <div class="footer-grid">
         <div>
           <div class="footer-logo">Mekar <span>Wangi</span> Indonesia</div>
           <p class="footer-desc">
-            Menghadirkan parfum baju dan parfum laundry berkualitas premium
-            dengan harga terjangkau. Tersedia di 8 cabang.
+            Parfum baju dan parfum laundry berkualitas premium. Tersedia di 8
+            cabang di Kabupaten Tuban dan Bojonegoro.
           </p>
         </div>
         <div class="footer-col">
@@ -1414,7 +1434,6 @@
           <ul>
             <li><a href="parfum-baju.html">Parfum Baju</a></li>
             <li><a href="parfum-laundry.html">Parfum Laundry</a></li>
-            <li><a href="#">Promo & Diskon</a></li>
             <li><a href="#">Paket Reseller</a></li>
           </ul>
         </div>
@@ -1422,11 +1441,9 @@
           <h4>Kontak</h4>
           <ul>
             <li>
-              <a href="https://wa.me/628123456789"
-                >WhatsApp: +62 812-XXXX-XXXX</a
-              >
+              <a href="https://wa.me/6285738894427">WA: +62 857-3889-4427</a>
             </li>
-            <li><a href="#">Instagram: @mekwangiindonesia</a></li>
+            <li><a href="https://www.instagram.com/mekarwangi_official58/">IG: @mekarwangi_official58</a></li>
             <li><a href="#">Email: [email@domain.com]</a></li>
           </ul>
         </div>
@@ -1434,77 +1451,13 @@
       <div class="footer-bottom">
         <p>© 2025 Mekar Wangi Indonesia. Semua hak dilindungi.</p>
         <div class="footer-socials">
-          <a href="#" title="Instagram">📸</a>
-          <a href="#" title="WhatsApp">💬</a>
-          <a href="#" title="TikTok">🎵</a>
+          <a href="#">📸</a><a href="#">💬</a><a href="#">🎵</a>
         </div>
       </div>
     </footer>
 
-    <!-- Floating WA -->
-    <a
-      href="https://wa.me/628123456789?text=Halo%20Mekar%20Wangi%2C%20saya%20mau%20tanya%20produk"
-      class="float-wa"
-      target="_blank"
-      title="Chat WhatsApp"
-      >💬</a
-    >
-
-    <script>
-      // Navbar scroll
-      window.addEventListener("scroll", () => {
-        document
-          .getElementById("navbar")
-          .classList.toggle("scrolled", window.scrollY > 30);
-      });
-
-      // Scroll animation
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) e.target.classList.add("visible");
-          });
-        },
-        { threshold: 0.12 },
-      );
-      document.querySelectorAll(".anim").forEach((el) => observer.observe(el));
-
-      // Tab cara pesan
-      function switchTab(tab) {
-        document
-          .querySelectorAll(".cara-tab")
-          .forEach((t) => t.classList.remove("active"));
-        document
-          .querySelectorAll(".cara-content")
-          .forEach((c) => c.classList.remove("active"));
-        event.target.classList.add("active");
-        document.getElementById("tab-" + tab).classList.add("active");
-      }
-
-      // FAQ accordion
-      function toggleFaq(btn) {
-        const item = btn.parentElement;
-        const isOpen = item.classList.contains("open");
-        document
-          .querySelectorAll(".faq-item")
-          .forEach((i) => i.classList.remove("open"));
-        if (!isOpen) item.classList.add("open");
-      }
-
-      // Mobile menu toggle
-      function toggleMenu() {
-        const links = document.querySelector(".nav-links");
-        links.style.display = links.style.display === "flex" ? "none" : "flex";
-        links.style.flexDirection = "column";
-        links.style.position = "absolute";
-        links.style.top = "64px";
-        links.style.left = "0";
-        links.style.right = "0";
-        links.style.background = "var(--white)";
-        links.style.padding = "1rem 5%";
-        links.style.borderBottom = "1px solid var(--border)";
-        links.style.boxShadow = "var(--shadow-md)";
-      }
-    </script>
+    <!-- ═══ SCRIPTS — di bawah agar halaman load lebih cepat ═══ -->
+    <script src="js/promo.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
