@@ -12,7 +12,7 @@
    ============================================================ */
 
 const PROMO_CONFIG = {
-  aktif: true, // ← GANTI: true = tampilkan bar | false = sembunyikan bar
+  aktif: false, // ← GANTI: true = tampilkan bar | false = sembunyikan bar
 
   teks: "🎁 Beli di atas Rp 50.000 gratis parfum 12ml pilihan! Berlaku di semua cabang.",
   // ↑ GANTI teks promo sesuai kebutuhan. Contoh lain:
