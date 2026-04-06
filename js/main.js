@@ -97,7 +97,7 @@ function orderWA(namaProduk, kategori) {
 }
 
 /* ── 8. WA WIDGET INTERAKTIF ── */
-const WA_NUMBER = "62895605854799"; // ← GANTI dengan nomor WA toko utama
+const WA_NUMBER = "6285738894427"; // ← GANTI dengan nomor WA toko utama
 const WA_GREETING =
   "Halo! Ada yang bisa kami bantu? 😊\nKami siap melayani pesanan parfum baju & laundry Anda.";
 
