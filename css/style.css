@@ -11,6 +11,12 @@
   --pink: #d4849e;
   --pink-soft: #ebb8cb;
   --pink-pale: #faedf2;
+  --green: #6abf69;
+  --green-soft: #a8d9ab;
+  --green-pale: #e6f4e7;
+  --red: #e57373;
+  --red-soft: #f2b8b8;
+  --red-pale: #f9eaea;
   --dark: #1a2835;
   --mid: #4a6070;
   --muted: #8a9ead;
@@ -45,6 +51,8 @@ html {
   font-size: 16px;
 }
 body {
+  font-size: clamp(15px, 2.5vw, 18px);
+  line-height: 1.8;
   font-family: var(--ff-body);
   background: var(--white);
   color: var(--dark);
@@ -109,7 +117,14 @@ p {
   background: var(--pink-pale);
   color: var(--pink);
 }
-
+.tag-green {
+  background: var(--green-pale);
+  color: var(--green);
+}
+.tag-red {
+  background: var(--red-pale);
+  color: var(--red);
+}
 .section-eyebrow {
   display: flex;
   align-items: center;
@@ -376,7 +391,6 @@ p {
   padding: 1rem 5%;
   background: var(--cream);
   border-bottom: 1px solid var(--border);
-  margin-top: 64px;
   font-size: 0.8rem;
   color: var(--muted);
   display: flex;
@@ -388,6 +402,33 @@ p {
 }
 .breadcrumb a:hover {
   color: var(--dark);
+}
+.produk-grid-main {
+  align-items: start; /* ubah ini */
+}
+
+.produk-card-main {
+  height: 100%; /* tambah ini */
+  display: flex;
+  flex-direction: column;
+}
+
+.produk-info-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.produk-desc-short {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* max 3 baris */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1; /* dorong tombol WA ke bawah */
+}
+
+.produk-wa {
+  margin-top: auto; /* tombol WA selalu di bawah */
 }
 
 /* ── ANIMATIONS ── */
@@ -444,8 +485,106 @@ p {
     gap: 2rem;
   }
 }
-@media (max-width: 560px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
+
+/* Tablet */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: clamp(1.6rem, 5vw, 2.2rem) !important;
   }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 3rem) !important;
+  }
+
+  .hero-sub {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem) !important;
+  }
+
+  .kgl-card h3 {
+    font-size: clamp(1rem, 3vw, 1.2rem) !important;
+  }
+
+  .kgl-card p {
+    font-size: clamp(0.88rem, 2.5vw, 1rem) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Produk */
+  .produk-name {
+    font-size: 1rem !important;
+  }
+
+  .produk-desc-short {
+    font-size: 0.88rem !important;
+  }
+
+  .produk-cat {
+    font-size: 0.78rem !important;
+  }
+
+  .produk-wa {
+    font-size: 0.95rem !important;
+    padding: 0.7rem 1rem !important;
+  }
+
+  /* Pagination */
+  #produk-pagination button,
+  #produk-pagination span {
+    min-width: 44px !important;
+    height: 44px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Search */
+  #search-produk {
+    font-size: 1rem !important;
+    padding: 0.65rem 0.8rem 0.65rem 2.4rem !important;
+  }
+
+  /* Tombol */
+  .btn {
+    font-size: 0.95rem !important;
+    padding: 0.7rem 1.4rem !important;
+  }
+
+  /* Testimoni */
+  .testi-card blockquote {
+    font-size: 0.95rem !important;
+  }
+
+  /* FAQ */
+  .faq-q {
+    font-size: 1rem !important;
+  }
+
+  .faq-a {
+    font-size: 0.92rem !important;
+  }
+
+  /* Cabang */
+  .cabang-card address {
+    font-size: 0.92rem !important;
+  }
+
+  .cabang-card h4 {
+    font-size: 1.05rem !important;
+  }
+
+  /* Footer */
+  .footer-desc {
+    font-size: 0.95rem !important;
+  }
+
+  /* Cara pesan */
+  .cara-step h4 {
+    font-size: 1rem !important;
+  }
+
+  .cara-step p {
+    font-size: 0.88rem !important;
+  }
+}
+.footer-grid {
+  grid-template-columns: 1fr;
 }
